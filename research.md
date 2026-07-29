@@ -14,13 +14,13 @@ permalink: /research/
 <div class="paper">
   <p class="paper-title">Local Population Characteristics and Access Equity of 340B Contract Pharmacies</p>
   <p class="paper-meta">With Maura Coughlin. Health Affairs Scholar, 3(7), 2025.</p>
-  <p class="paper-links"><a href="/assets/files/340b_HA1.pdf">10.1093/haschl/qxaf117.</a></p>
+  <p class="paper-links"><a href="/assets/files/340b_HA1.pdf">Paper</a></p>
 </div>
 
 <div class="paper">
   <p class="paper-title">The Wizard of OZ (Opportunity Zones): Spatial Spillovers in Place-Based Programs</p>
   <p class="paper-meta">With Robin Sickles and Yanfei Sun.,  Seven Decades of Econometrics and Beyond, Springer, 2025.</p>
-  <p class="paper-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-92699-0_6">10.1007/978-3-031-92699-0_6</a></p>
+  <p class="paper-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-92699-0_6">Paper</a></p>
 </div>
 
 </section>
