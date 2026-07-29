@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site guide · Dibya Mishra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --paper: #f8f5ee;
+  --paper-2: #f1ece1;
+  --ink: #24201c;
+  --ink-soft: #57504a;
+  --ink-faint: #8b8279;
+  --rule: #ddd5c7;
+  --accent: #8b2635;
+  --display: "Fraunces", Georgia, serif;
+  --body: "Source Serif 4", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+h1 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw + 1rem, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin: 0 0 0.4rem;
+}
+.subtitle { color: var(--ink-soft); margin: 0 0 2.5rem; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 3.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+h3 {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 2.25rem 0 0.6rem;
+}
+p { margin: 0 0 1.1rem; }
+a { color: var(--accent); text-underline-offset: 3px; }
+
+ol.steps { counter-reset: step; list-style: none; margin: 0 0 1.5rem; padding: 0; }
+ol.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 2.6rem;
+  margin-bottom: 1.15rem;
+}
+ol.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul.check { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+ul.check li {
+  position: relative;
+  padding-left: 1.9rem;
+  margin-bottom: 0.7rem;
+}
+ul.check li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.42rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 1px solid var(--ink-faint);
+  border-radius: 2px;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--paper-2);
+  padding: 0.12em 0.35em;
+  border-radius: 3px;
+}
+pre {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  margin: 0 0 1.25rem;
+}
+
+table { width: 100%; border-collapse: collapse; margin: 0 0 1.5rem; font-size: 0.92rem; }
+th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--rule); }
+th {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+td code { background: none; padding: 0; }
+
+.note {
+  border-left: 2px solid var(--accent);
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  margin: 0 0 1.5rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.note strong { font-weight: 600; color: var(--ink); }
+
+.toc { background: var(--paper-2); border-radius: 4px; padding: 1.1rem 1.4rem; margin: 0 0 1rem; }
+.toc p { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 0.6rem; }
+.toc ol { margin: 0; padding-left: 1.2rem; }
+.toc li { margin-bottom: 0.25rem; }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--ink-faint); font-size: 0.85rem; }
+
+@media print {
+  body { background: #fff; font-size: 11pt; }
+  .wrap { max-width: none; padding: 0; }
+  h2 { page-break-after: avoid; }
+  pre, table, .note { page-break-inside: avoid; }
+  .toc { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="eyebrow">Reference · keep this off GitHub</p>
+<h1>Site guide</h1>
+<p class="subtitle">Deploying mishradibya.com and keeping it up to date. No Ruby, no build tools, no command line.</p>
+
+<div class="toc">
+<p>Contents</p>
+<ol>
+<li><a href="#deploy">Put the files on GitHub</a></li>
+<li><a href="#dns">Point your domain at it</a></li>
+<li><a href="#finish">Before you call it done</a></li>
+<li><a href="#post">Add a journal entry</a></li>
+<li><a href="#paper">Add a paper</a></li>
+<li><a href="#project">Add a project</a></li>
+<li><a href="#page">Add a page</a></li>
+<li><a href="#small">Small edits</a></li>
+<li><a href="#private">Keeping files private</a></li>
+<li><a href="#broken">When something breaks</a></li>
+</ol>
+</div>
+
+<h2 id="deploy">1. Put the files on GitHub</h2>
+
+<p>GitHub builds the site for you. You do not need anything installed.</p>
+
+<ol class="steps">
+<li>On GitHub, create a new <strong>public</strong> repository named exactly <code>mishrad.github.io</code>. The name has to match this pattern or Pages will not serve it at the root. If you already have a repo called <code>webpage</code>, rename it in Settings rather than making a new one.</li>
+<li>Unzip the bundle. Upload the <strong>contents</strong> of the folder, not the folder itself. When you are done, <code>index.html</code> and <code>_config.yml</code> should sit at the top level of the repo, not inside a subfolder.</li>
+<li>Go to Settings, then Pages. Source: "Deploy from a branch". Branch: <code>main</code>. Folder: <code>/ (root)</code>. Save.</li>
+<li>Wait about a minute. The site is live at <code>https://mishrad.github.io</code>.</li>
+</ol>
+
+<div class="note">
+<strong>The repo must be public.</strong> On a free GitHub account, Pages only serves public repositories. Making it private later unpublishes the site automatically. Anything you commit is readable by anyone, including files Jekyll does not turn into pages.
+</div>
+
+<p>Confirm the site works at the github.io address before you touch DNS. Debugging a build error and a DNS propagation delay at the same time is miserable.</p>
+
+<h2 id="dns">2. Point your domain at it</h2>
+
+<p>Right now mishradibya.com resolves to your TMD hosting account and serves WordPress. This moves the domain to GitHub. Afterwards mishradibya.com serves the new site and mishrad.github.io redirects to it, so both addresses keep working and there is one canonical URL.</p>
+
+<div class="note">
+<strong>Back up WordPress first.</strong> Download a copy from TMD before you change anything. Once DNS moves you cannot browse the old site to retrieve something you forgot.
+</div>
+
+<h3>In your TMD DNS panel</h3>
+
+<p>Delete the existing A record for <code>@</code> and the existing CNAME or A record for <code>www</code>. Then add these five records.</p>
+
+<table>
+<thead><tr><th>Type</th><th>Host</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><code>@</code></td><td><code>185.199.108.153</code></td></tr>
+<tr><td>A</td><td><code>@</code></td><td><code>185.199.109.153</code></td></tr>
+<tr><td>A</td><td><code>@</code></td><td><code>185.199.110.153</code></td></tr>
+<tr><td>A</td><td><code>@</code></td><td><code>185.199.111.153</code></td></tr>
+<tr><td>CNAME</td><td><code>www</code></td><td><code>mishrad.github.io.</code></td></tr>
+</tbody>
+</table>
+
+<p>The trailing dot on the CNAME value matters in some panels and is ignored in others. Include it. Leave your MX records alone, they route email and have nothing to do with the website.</p>
+
+<h3>In the repo</h3>
+
+<p>The bundle already contains a <code>CNAME</code> file holding <code>mishradibya.com</code>, so GitHub picks up the domain on its own. Check Settings, then Pages, and confirm the custom domain field reads <code>mishradibya.com</code> and the DNS check passes. Then tick "Enforce HTTPS".</p>
+
+<p>DNS usually propagates within an hour. The certificate can take a few hours after that. If "Enforce HTTPS" is greyed out, wait and come back.</p>
+
+<p>To make <code>www.mishradibya.com</code> canonical instead, put that in the <code>CNAME</code> file and in the Pages settings. Everything else stays the same.</p>
+
+<p>Once the new site is live and you are happy with it, cancel the TMD hosting plan. Keep the domain registration.</p>
+
+<h2 id="finish">3. Before you call it done</h2>
+
+<ul class="check">
+<li>Replace <code>assets/images/profile.jpg</code> with your photo. Square crop, same filename, same extension. <code>.jpg</code> and <code>.jpeg</code> are different files and this has broken the site once already.</li>
+<li>Put your CV at <code>assets/files/cv.pdf</code>. The nav and footer link to it.</li>
+<li>Fill in the real DOI links for the two 2025 publications on the research page. They are <code>#</code> placeholders now.</li>
+<li>Replace or delete the other <code>#</code> links. A "Draft" link that 404s is worse than no link.</li>
+<li>Paste your Google Scholar URL into <code>scholar</code> in <code>_config.yml</code>. Leaving it empty hides the link, which is fine.</li>
+<li>Expand the two entries on the projects page.</li>
+<li>Decide whether Cornerstone Research stays in the affiliation block on <code>index.html</code> and in the footer disclaimer.</li>
+<li>Delete the sample post in <code>_posts/</code>.</li>
+</ul>
+
+<h2 id="post">4. Add a journal entry</h2>
+
+<p>Create a file in <code>_posts/</code> named <code>YYYY-MM-DD-short-slug.md</code>. The date in the filename controls the ordering and the URL, so it has to be right.</p>
+
+<pre>---
+title: "What the probe was actually reading"
+date: 2026-08-14
+summary: "One sentence shown under the title on the journal index."
+---
+
+Your text here. Plain Markdown, blank line between paragraphs.
+
+## A subheading if you want one
+
+Links look like [this](https://example.com).</pre>
+
+<p>The post appears on <code>/journal/</code> automatically. There is no index to update. To draft without publishing, give it a future date and it stays hidden until then.</p>
+
+<h2 id="paper">5. Add a paper</h2>
+
+<p>Open <code>research.md</code>. Copy one of the existing blocks and edit it. The four sections are Publications, Working papers, Works in progress, and Other writing. Move a block between sections as the work moves along.</p>
+
+<pre>&lt;div class="paper"&gt;
+  &lt;p class="paper-title"&gt;Title of the paper&lt;/p&gt;
+  &lt;p class="paper-meta"&gt;With Coauthor Name. Journal, 2026.&lt;/p&gt;
+  &lt;p class="paper-abstract"&gt;Two or three sentences.&lt;/p&gt;
+  &lt;p class="paper-links"&gt;&lt;a href="/assets/files/paper.pdf"&gt;PDF&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</pre>
+
+<p>Any of the four lines can be deleted if it does not apply. Works in progress usually have a title and coauthors only. To attach a PDF, upload it to <code>assets/files/</code> and link it as <code>/assets/files/whatever.pdf</code>.</p>
+
+<h2 id="project">6. Add a project</h2>
+
+<p>Open <code>projects.md</code>. Same block structure as a paper, minus the meta line.</p>
+
+<pre>&lt;div class="paper"&gt;
+  &lt;p class="paper-title"&gt;Project name&lt;/p&gt;
+  &lt;p class="paper-abstract"&gt;What it does and what you learned.&lt;/p&gt;
+  &lt;p class="paper-links"&gt;&lt;a href="https://github.com/mishrad/repo"&gt;Code&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</pre>
+
+<p>To add a second section alongside Hardware, copy the whole <code>&lt;section class="section"&gt;</code> block and change its <code>&lt;h2&gt;</code>.</p>
+
+<h2 id="page">7. Add a page</h2>
+
+<p>Create a file at the top level, for example <code>teaching.md</code>.</p>
+
+<pre>---
+layout: page
+title: Teaching
+permalink: /teaching/
+---
+
+Content in Markdown.</pre>
+
+<p>Then add a link in <code>_includes/nav.html</code>, copying the line that points at Research.</p>
+
+<h2 id="small">8. Small edits</h2>
+
+<p><strong>Update your CV.</strong> Overwrite <code>assets/files/cv.pdf</code>. The links already point there.</p>
+
+<p><strong>Change your affiliation.</strong> The block under your name is in <code>index.html</code>, near the top. The footer disclaimer is in <code>_includes/footer.html</code>.</p>
+
+<p><strong>Change research interests.</strong> Bottom of <code>index.html</code>.</p>
+
+<p><strong>Change a color.</strong> Every color is a variable at the top of <code>assets/css/style.css</code>, in the <code>:root</code> block for light mode and <code>:root[data-theme="dark"]</code> for dark. Change the hex once and it updates everywhere.</p>
+
+<h2 id="private">9. Keeping files private</h2>
+
+<p>The <code>exclude:</code> list in <code>_config.yml</code> only stops Jekyll from turning a file into a page. It does not hide it. In a public repo, a committed file is readable whether or not it renders.</p>
+
+<p>So do not commit anything you would mind being read. This guide, <code>README.md</code>, and <code>MAINTENANCE.md</code> all live outside the repo folder. The bundle ships a <code>.gitignore</code> listing them as a second line of defense if you ever work locally with git.</p>
+
+<div class="note">
+<strong>Deleting is not enough.</strong> A file that was committed once stays in the git history and is reachable by anyone who knows to look. Undoing that means rewriting history with <code>git filter-repo</code>, or deleting and recreating the repo.
+</div>
+
+<h2 id="broken">10. When something breaks</h2>
+
+<p><strong>The site 404s at the root.</strong> The repo has to be named exactly <code>mishrad.github.io</code>.</p>
+
+<p><strong>A page does not appear.</strong> Check the Actions tab for a red X. The usual cause is a typo in the front matter: a missing closing <code>---</code>, or an unquoted title containing a colon.</p>
+
+<p><strong>The photo is broken.</strong> The filename in the HTML has to match the file exactly, extension included.</p>
+
+<p><strong>A post is in the wrong order.</strong> Posts sort by the date in the filename, not the date in the front matter. Rename the file.</p>
+
+<p><strong>The custom domain stopped working.</strong> Check that the <code>CNAME</code> file still exists in the repo. Some workflows delete it. It should contain one line: <code>mishradibya.com</code>.</p>
+
+<p><strong>Changes are not showing up.</strong> Give it a minute, then hard refresh. Pages caches aggressively.</p>
+
+<footer>
+Keep this file out of the repository. Last updated July 2026.
+</footer>
+
+</div>
+</body>
+</html>

@@ -28,7 +28,7 @@ them.
   <p class="paper-title">E-ink storytelling device</p>
   <p class="paper-abstract">
     A repurposed e-ink reader that generates and displays illustrated stories.
-    Built for my child.
+    Built with a 2 year old in mind. 
   </p>
 </div>
 

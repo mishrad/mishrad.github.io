@@ -14,13 +14,13 @@ permalink: /research/
 <div class="paper">
   <p class="paper-title">Local Population Characteristics and Access Equity of 340B Contract Pharmacies</p>
   <p class="paper-meta">With Maura Coughlin. Health Affairs Scholar, 3(7), 2025.</p>
-  <p class="paper-links"><a href="#">DOI</a></p>
+  <p class="paper-links"><a href="/assets/files/340b_HA1.pdf">10.1093/haschl/qxaf117.</a></p>
 </div>
 
 <div class="paper">
   <p class="paper-title">The Wizard of OZ (Opportunity Zones): Spatial Spillovers in Place-Based Programs</p>
-  <p class="paper-meta">With Robin Sickles and Yanfei Sun. Springer, 2025.</p>
-  <p class="paper-links"><a href="#">DOI</a></p>
+  <p class="paper-meta">With Robin Sickles and Yanfei Sun.,  Seven Decades of Econometrics and Beyond, Springer, 2025.</p>
+  <p class="paper-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-92699-0_6">10.1007/978-3-031-92699-0_6</a></p>
 </div>
 
 </section>
@@ -30,7 +30,7 @@ permalink: /research/
 
 <div class="paper">
   <p class="paper-title">Quality Considerations and Universal Healthcare</p>
-  <p class="paper-meta">Job market paper.</p>
+  <p class="paper-meta">Draft Coming Soon</p>
   <p class="paper-abstract">
     A structural model of hospital choice under limited consideration,
     estimated on data from a large public insurance scheme in India. Artificial
@@ -38,7 +38,7 @@ permalink: /research/
     measure. Counterfactuals evaluate information provision and hospital
     empanelment incentives.
   </p>
-  <p class="paper-links"><a href="#">Draft</a><a href="#">Slides</a></p>
+  <p class="paper-links"><a href="https://repository.rice.edu/items/0f88a7c4-7e9e-45f0-a5cd-ff547339cc22">Draft</a><a href="https://repository.rice.edu/items/0f88a7c4-7e9e-45f0-a5cd-ff547339cc22">Slides</a></p>
 </div>
 
 <div class="paper">
@@ -51,17 +51,19 @@ permalink: /research/
     Survey. Subsidized availability raises sanitary napkin use by 9.6
     percentage points.
   </p>
-  <p class="paper-links"><a href="#">Draft</a></p>
+  <p class="paper-links"><a href="/assets/files/RD_PMBJP.pdf">Draft</a></p>
 </div>
 
 <div class="paper">
   <p class="paper-title">Beyond a Free Lunch: Unintended Consequences of an Out-of-School Nutrition Program on Adolescent Girls' School Enrollment and Health Outcomes</p>
   <p class="paper-meta">With Tanmay Devi, Ajinkya Keskar, and Ritika Sethi.</p>
+     <p class="paper-links"><a href="https://www.ajinkyakeskar.com/files/SABLA_draft.pdf">Draft</a></p>
 </div>
 
 <div class="paper">
   <p class="paper-title">Spectrum Allocation to Public Operators: A Structural Analysis of Set-Asides versus Subsidies in Indian Telecom Auctions</p>
   <p class="paper-meta">With Rajarshi Bhowal and Nurdaulet Menglibayev.</p>
+   <p class="paper-links"><a href="/assets/files/BMM.pdf">Draft</a></p>
 </div>
 
 <div class="paper">
