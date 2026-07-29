@@ -85,15 +85,6 @@ permalink: /research/
   <p class="paper-meta">With Maura Coughlin.</p>
 </div>
 
-<div class="paper">
-  <p class="paper-title">Do Language Models Represent Utility-Maximizing Choice? An Interpretability Study</p>
-  <p class="paper-meta">Independent research.</p>
-  <p class="paper-abstract">
-    Layerwise linear probes trained on an open-source language model to test
-    whether the model linearly represents utility-maximizing choice.
-    Implemented in PyTorch.
-  </p>
-</div>
 
 </section>
 
