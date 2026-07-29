@@ -1,0 +1,57 @@
+---
+layout: default
+title: Home
+---
+
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <h1>Dibya Mishra</h1>
+      <p class="hero-detail">
+        Associate<br>
+        Cornerstone Research<br>
+        Chicago, Illinois
+      </p>
+      <p class="linkrow">
+        <a href="mailto:{{ site.email }}">Email</a>
+        <a href="https://www.linkedin.com/in/{{ site.linkedin }}">LinkedIn</a>
+        <a href="https://github.com/{{ site.github }}">GitHub</a>
+        {% if site.scholar != "" %}<a href="{{ site.scholar }}">Scholar</a>{% endif %}
+        <a href="{{ site.cv | relative_url }}">CV</a>
+      </p>
+    </div>
+    <img class="hero-portrait" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Dibya Mishra">
+  </section>
+
+  <section class="section">
+    <h2>About</h2>
+    <p>
+      I am an economist and engineer. I hold a PhD. in Economics from Rice University and an MS in CS from Georgia Tech. 
+      
+      My research interests lie in Industrial Organization, Causal Inference, and AI. At my current role, I estimate demand systems and price
+      elasticities on large administrative and transaction data, and my research
+      asks how people choose when they do not see the full set of options. 
+      
+      
+    </p>
+    <p>
+      This site is my public research page and my journal. The
+      <a href="{{ '/research/' | relative_url }}">research</a> page lists my
+      papers, the <a href="{{ '/journal/' | relative_url }}">journal</a> holds
+      notes on what I am reading and working through, and the
+      <a href="{{ '/projects/' | relative_url }}">projects</a> page covers things
+      I build at home.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Research interests</h2>
+    <p class="fields">
+      Industrial organization · Consumer consideration and choice · Economics of
+      healthcare markets · Digital markets · Applied econometrics and machine
+      learning · Interpretability of language models
+    </p>
+  </section>
+
+</main>

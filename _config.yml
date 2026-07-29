@@ -1,0 +1,48 @@
+# ===================================================================
+# Site settings — these are the ones you edit
+# ===================================================================
+title: Dibya Mishra
+tagline: "Economist"
+description: >-
+  Dibya Mishra is an economist working at the intersection of
+  industrial organization, healthcare, development, and machine
+  learning.
+
+url: "https://mishradibya.com"
+baseurl: ""
+
+# Contact and links — used in the nav and footer
+email: dibyadeeptamishra@gmail.com
+github: mishrad
+linkedin: dibyamishra
+scholar: ""            # paste your Google Scholar profile URL here
+cv: /assets/files/cv.pdf
+resume: /assets/files/resume.pdf
+
+# ===================================================================
+# Build settings — you rarely touch these
+# ===================================================================
+markdown: kramdown
+permalink: /journal/:year/:month/:day/:title/
+timezone: America/Chicago
+
+plugins:
+  - jekyll-feed
+
+# Files that should never become public pages
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - notes
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
