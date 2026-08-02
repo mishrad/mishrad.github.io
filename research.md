@@ -38,7 +38,7 @@ permalink: /research/
     measure. Counterfactuals evaluate information provision and hospital
     empanelment incentives.
   </p>
-  <p class="paper-links"><a href="https://repository.rice.edu/items/0f88a7c4-7e9e-45f0-a5cd-ff547339cc22">Draft</a><a href="https://repository.rice.edu/items/0f88a7c4-7e9e-45f0-a5cd-ff547339cc22">Slides</a></p>
+  <p class="paper-links"><a href="/assets/files/qualcons.pdf">Draft</a></p>
 </div>
 
 <div class="paper">
