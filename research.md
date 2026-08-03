@@ -66,14 +66,7 @@ permalink: /research/
    <p class="paper-links"><a href="/assets/files/BMM.pdf">Draft</a></p>
 </div>
 
-<div class="paper">
-  <p class="paper-title">Who Matches with Whom: Mergers and Acquisitions in Health Systems</p>
-</div>
 
-<div class="paper">
-  <p class="paper-title">Allocating Bundles: An Operations Research Framework</p>
-  <p class="paper-meta">With Jeremy Fox.</p>
-</div>
 
 </section>
 
@@ -83,6 +76,15 @@ permalink: /research/
 <div class="paper">
   <p class="paper-title">Long Distance Relationships: Analyzing Hospital-Pharmacy Contracts</p>
   <p class="paper-meta">With Maura Coughlin.</p>
+</div>
+
+<div class="paper">
+  <p class="paper-title">Who Matches with Whom: Mergers and Acquisitions in Health Systems</p>
+</div>
+
+<div class="paper">
+  <p class="paper-title">Allocating Bundles: An Operations Research Framework</p>
+  <p class="paper-meta">With Jeremy Fox.</p>
 </div>
 
 
