@@ -51,7 +51,7 @@ permalink: /research/
     Survey. Subsidized availability raises sanitary napkin use by 9.6
     percentage points.
   </p>
-  <p class="paper-links"><a href="/assets/files/RD_PMBJP.pdf">Draft</a></p> <a href="/pmbjp/">Interactive app</a></p>
+  <p class="paper-links"><a href="/assets/files/RD_PMBJP.pdf">Draft</a> <a href="/pmbjp/">Interactive app</a></p>
 </div>
 
 <div class="paper">
