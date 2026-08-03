@@ -30,7 +30,7 @@ permalink: /research/
 
 <div class="paper">
   <p class="paper-title">Quality Considerations and Universal Healthcare</p>
-  <p class="paper-meta">Draft Coming Soon</p>
+  <p class="paper-meta">Working Paper</p>
   <p class="paper-abstract">
     A structural model of hospital choice under limited consideration,
     estimated on data from a large public insurance scheme in India. Artificial
@@ -56,7 +56,7 @@ permalink: /research/
 
 <div class="paper">
   <p class="paper-title">Beyond a Free Lunch: Unintended Consequences of an Out-of-School Nutrition Program on Adolescent Girls' School Enrollment and Health Outcomes</p>
-  <p class="paper-meta">With Tanmay Devi, Ajinkya Keskar, and Ritika Sethi.</p>
+  <p class="paper-meta">With Tanmay Devi, Ajinkya Keskar, and Ritika Sethi. Under review</p>
      <p class="paper-links"><a href="https://www.ajinkyakeskar.com/files/SABLA_draft.pdf">Draft</a></p>
 </div>
 
