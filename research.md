@@ -23,6 +23,14 @@ permalink: /research/
   <p class="paper-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-92699-0_6">Paper</a></p>
 </div>
 
+<div class="paper">
+  <p class="paper-title">AI-assisted teams outperform AI-led teams but not human-only teams in assessing research reproducibility in quantitative social science. (Meta Paper published after Replication Games)</p>
+  <p class="paper-meta">With Abel Brodeur et al.,  Proceedings of the National Academy of Sciences 123.22, 2026.</p>
+  <p class="paper-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-92699-0_6](https://www.pnas.org/doi/abs/10.1073/pnas.2524747123">Paper</a></p>
+</div>
+
+
+
 </section>
 
 <section class="section">
