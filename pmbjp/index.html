@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pennies for Pads · Results & Siting Planner</title>
+<meta name="description" content="Companion page to Mishra & Sethi, Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India. Interactive efficiency-equity siting planner.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F1E7; --paper-deep:#EFE8D9; --ink:#241F19; --ink-soft:#5C5346;
+    --oxblood:#6E1423; --oxblood-bright:#8C2333; --rule:#DDD3BF; --card:#FBF8F1;
+    --tan:#8A7E6D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:16.5px;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px 80px}
+  a{color:var(--oxblood)}
+
+  header.mast{padding:56px 0 30px;border-bottom:3px double var(--oxblood)}
+  .kicker{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--oxblood);margin-bottom:14px}
+  h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(30px,5vw,44px);line-height:1.08;letter-spacing:-.015em}
+  .authors{margin-top:12px;color:var(--ink-soft)}
+  .links{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:13px}
+  .links a{margin-right:18px;text-decoration:none;border-bottom:1px solid var(--oxblood)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-top:none;background:var(--card)}
+  .stat{padding:16px 12px;text-align:center;border-right:1px solid var(--rule)}
+  .stat:last-child{border-right:none}
+  .stat .n{font-family:'Fraunces',serif;font-weight:700;font-size:26px;color:var(--oxblood)}
+  .stat .l{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.stat:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+  section{margin-top:52px}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;border-bottom:1px solid var(--rule);padding-bottom:8px;margin-bottom:16px}
+  p.body{margin-bottom:12px;max-width:74ch}
+  .footnote{font-size:13px;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;line-height:1.6;margin-top:8px}
+
+  .chart-card{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:18px;margin-top:14px}
+  .chart-title{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+  svg text{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:var(--ink-soft)}
+  svg .val{fill:var(--ink);font-size:12px}
+
+  .robust{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+  @media(max-width:700px){.robust{grid-template-columns:1fr}}
+  .rcard{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--oxblood);padding:14px 16px;border-radius:0 4px 4px 0}
+  .rcard .t{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--oxblood);margin-bottom:6px}
+  .rcard p{font-size:14.5px}
+
+  .eq{background:var(--paper-deep);border:1px solid var(--rule);border-radius:4px;padding:14px 18px;font-family:'IBM Plex Mono',monospace;font-size:14px;margin:14px 0;overflow-x:auto;white-space:nowrap}
+
+  .planner{display:grid;grid-template-columns:280px 1fr;gap:18px;margin-top:16px}
+  @media(max-width:760px){.planner{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:16px}
+  .label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+  .wval{color:var(--oxblood)}
+  input[type=range]{width:100%;accent-color:var(--oxblood);margin:4px 0 2px}
+  .ends{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);margin-bottom:14px}
+  .totals{font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.9;border-top:1px solid var(--rule);margin-top:6px;padding-top:10px}
+  .totals b{color:var(--oxblood);font-weight:500}
+  ol.rank{margin:6px 0 0 20px}
+  ol.rank li{margin-bottom:6px;font-size:14px}
+  ol.rank li::marker{font-family:'IBM Plex Mono',monospace;color:var(--oxblood)}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft)}
+  .csv{border-top:1px solid var(--rule);margin-top:14px;padding-top:12px}
+  .csv input{font-family:'IBM Plex Mono',monospace;font-size:12px;width:100%}
+  .csv p{font-size:12px;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;line-height:1.6;margin-top:6px}
+
+  footer{margin-top:64px;padding-top:18px;border-top:3px double var(--oxblood);font-size:13.5px;color:var(--ink-soft)}
+  footer .cite{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper-deep);border:1px solid var(--rule);border-radius:4px;padding:10px 14px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <div class="kicker">Companion Page · Working Paper · Under Review</div>
+  <h1>Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India</h1>
+  <p class="authors">Dibya Mishra (Rice University) · Ritika Sethi (Harris School of Public Policy, University of Chicago)</p>
+  <div class="links">
+    <a href="/assets/files/RD_PMBJP.pdf">Paper (PDF)</a>
+    <a href="/research/">All research</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">+9.6pp</div><div class="l">pad adoption (SE 1.1)</div></div>
+  <div class="stat"><div class="n">₹1</div><div class="l">per pad vs ₹3–8 market</div></div>
+  <div class="stat"><div class="n">489,379</div><div class="l">women 15–24, NFHS 4 & 5</div></div>
+  <div class="stat"><div class="n">~7,000</div><div class="l">subdistricts, staggered rollout</div></div>
+</div>
+
+<section>
+  <h2>What the paper does</h2>
+  <p class="body">India's Jan Aushadhi–Suvidha program sells sanitary napkins at ₹1 per pad through a national network of government-sponsored generic pharmacies (Jan Aushadhi Kendras). We link administrative records on the universe of Kendras, their locations, opening dates, and owner characteristics, to nearly half a million women in two National Family Health Survey rounds, and estimate the adoption effect with the doubly robust difference-in-differences estimator of Sant'Anna and Zhao (2020), tracing dynamics with Callaway and Sant'Anna (2021).</p>
+  <p class="body">Subsidized availability raises sanitary napkin use by 9.6 percentage points, a 16% gain over a 61% baseline. Adoption jumps in the year subsidized pads arrive, with no movement beforehand. A falsification test is the design's built-in placebo: Kendra openings in the decade before subsidized pads existed produce no adoption response, so the ₹1 product, not pharmacy presence per se, is the operative channel.</p>
+</section>
+
+<section>
+  <h2>Where the effect is largest</h2>
+  <p class="body">The response is far from uniform. Effects are larger where a Kendra opens amid existing health and retail infrastructure, and at woman-owned outlets, and smallest in the least served areas. That ordering argues against physical access as the binding constraint and is consistent with the price, information, and stigma channels doing the work.</p>
+  <div class="chart-card">
+    <div class="chart-title">Treatment effect by opening context (percentage points, Table III)</div>
+    <svg id="hetChart" viewBox="0 0 840 300" role="img" aria-label="Heterogeneous treatment effects bar chart"></svg>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Effect by time since local availability (Table IV)</div>
+    <svg id="rampChart" viewBox="0 0 840 240" role="img" aria-label="Effect by exposure duration"></svg>
+    <p class="footnote">Adoption builds over the first six to eight months, consistent with information diffusion and adoption at successive menstrual cycles rather than an immediate jump.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Robustness in three numbers</h2>
+  <div class="robust">
+    <div class="rcard"><div class="t">Falsification</div><p>Kendra entry before any ₹1 pad existed moves adoption by ≈ 0. The jump is specific to the subsidized product.</p></div>
+    <div class="rcard"><div class="t">Sensitivity</div><p>The effect survives parallel-trends violations up to three-quarters of the largest pre-period deviation (Rambachan–Roth breakdown at M̄ ≈ 0.75).</p></div>
+    <div class="rcard"><div class="t">Concurrent programs</div><p>Dropping all nine states with their own napkin schemes still yields +5.3pp (p &lt; 0.01). No single state drives the result.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>The planner tool: efficiency versus equity</h2>
+  <p class="body">Because adoption responds most strongly where Kendras co-locate with existing infrastructure, a planner maximizing adoption per rupee would put new outlets where deprivation is smallest. The paper formalizes the tension as a constrained siting problem for the planned expansion. The planner picks K subdistricts to maximize</p>
+  <div class="eq">max<sub>S, |S|=K</sub> &nbsp; Σ<sub>j∈S</sub> n<sub>j</sub> [ (1−λ)·τ̂<sub>j</sub> + λ·d<sub>j</sub> ]</div>
+  <p class="body">where n<sub>j</sub> is women of menstruating age, τ̂<sub>j</sub> the predicted adoption gain, d<sub>j</sub> a healthcare-desert indicator, and λ the equity weight. Because the objective is additive, the solution ranks subdistricts by s<sub>j</sub>(λ) = n<sub>j</sub>[(1−λ)τ̂<sub>j</sub> + λd<sub>j</sub>] and takes the top K. Move λ to trace the frontier.</p>
+
+  <div class="planner">
+    <div class="panel">
+      <div class="label">Equity weight <span class="wval" id="lamOut">λ = 0.30</span></div>
+      <input type="range" id="lam" min="0" max="1" step="0.01" value="0.3">
+      <div class="ends"><span>efficiency</span><span>equity</span></div>
+
+      <div class="label">Outlets to site <span class="wval" id="kOut">K = 10</span></div>
+      <input type="range" id="k" min="1" max="25" step="1" value="10">
+
+      <div class="totals" id="totals"></div>
+
+      <div class="csv">
+        <div class="label">Load real estimates</div>
+        <input type="file" id="file" accept=".csv">
+        <p>CSV header: name,women,tau,desert<br>tau ∈ [0,1] predicted gain · desert ∈ {0,1}</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="chart-title">Efficiency–equity frontier (top-K sets as λ varies)</div>
+      <svg id="frontier" viewBox="0 0 560 300"></svg>
+      <div class="chart-title" style="margin-top:12px">Selected subdistricts at current λ</div>
+      <ol class="rank" id="rank"></ol>
+    </div>
+  </div>
+  <p class="footnote">Candidate units shown are illustrative, generated to match the paper's heterogeneity pattern (predicted gains largest where infrastructure is densest, and negatively associated with the desert indicator). Load a CSV to run the planner on real subdistrict estimates. Adoption predictions apply the paper's subgroup effects; they are not causal guarantees for any specific site.</p>
+</section>
+
+<footer>
+  <p>Citation:</p>
+  <div class="cite">Mishra, Dibya and Ritika Sethi. "Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India." Working paper, this version June 2026. Under review.</div>
+</footer>
+
+</div>
+
+<script>
+// ============ shared helpers ============
+const OX = "#6E1423", OXB = "#8C2333", TAN = "#B8AD98", RULE = "#DDD3BF", SOFT = "#5C5346";
+function el(n, attrs){ const e = document.createElementNS("http://www.w3.org/2000/svg", n);
+  for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+// ============ heterogeneity chart (Table III, real numbers) ============
+(function(){
+  const svg = document.getElementById("hetChart");
+  const groups = [
+    {label:"Hospital nearby",    yes:12.8, no:7.9,  sig:"t = 2.10"},
+    {label:"Pharmacy nearby",    yes:8.9,  no:6.2,  sig:"t = 1.18"},
+    {label:"Supermarket nearby", yes:15.5, no:5.0,  sig:"t = 4.56"},
+    {label:"Woman-owned outlet", yes:11.0, no:5.0,  sig:"t = 2.41"}
+  ];
+  const W=840, H=300, padL=30, padB=64, top=24, maxV=17;
+  const gw = (W - padL - 20) / groups.length;
+  groups.forEach((g,i)=>{
+    const x0 = padL + i*gw + gw*0.18, bw = gw*0.26;
+    [["yes",g.yes,OXB],["no",g.no,TAN]].forEach(([tag,v,col],j)=>{
+      const h = (H - padB - top) * v / maxV;
+      const x = x0 + j*(bw+8), y = H - padB - h;
+      svg.appendChild(el("rect",{x,y,width:bw,height:h,fill:col,rx:2}));
+      const t = el("text",{x:x+bw/2,y:y-6,"text-anchor":"middle",class:"val"});
+      t.textContent = v.toFixed(1); svg.appendChild(t);
+      const lab = el("text",{x:x+bw/2,y:H-padB+16,"text-anchor":"middle"});
+      lab.textContent = tag; svg.appendChild(lab);
+    });
+    const gl = el("text",{x:padL+i*gw+gw/2,y:H-padB+34,"text-anchor":"middle"});
+    gl.textContent = g.label; svg.appendChild(gl);
+    const sg = el("text",{x:padL+i*gw+gw/2,y:H-padB+50,"text-anchor":"middle"});
+    sg.textContent = g.sig; svg.appendChild(sg);
+  });
+  svg.appendChild(el("line",{x1:padL,y1:H-padB,x2:W-10,y2:H-padB,stroke:RULE}));
+})();
+
+// ============ exposure ramp (Table IV, real numbers) ============
+(function(){
+  const svg = document.getElementById("rampChart");
+  const pts = [[60,3.1],[120,5.3],[240,10.3],[360,10.4]];
+  const W=840,H=240,padL=44,padB=36,top=18,maxX=380,maxY=12;
+  const X=d=>padL+(W-padL-20)*d/maxX, Y=v=>H-padB-(H-padB-top)*v/maxY;
+  // headline reference line
+  svg.appendChild(el("line",{x1:padL,y1:Y(9.6),x2:W-20,y2:Y(9.6),stroke:OX,"stroke-dasharray":"4 4",opacity:.5}));
+  const hl = el("text",{x:W-22,y:Y(9.6)-6,"text-anchor":"end"}); hl.textContent="headline 9.6pp"; svg.appendChild(hl);
+  // path
+  let d = "M " + pts.map(p=>X(p[0])+" "+Y(p[1])).join(" L ");
+  svg.appendChild(el("path",{d,fill:"none",stroke:OXB,"stroke-width":2.5}));
+  pts.forEach(p=>{
+    svg.appendChild(el("circle",{cx:X(p[0]),cy:Y(p[1]),r:5,fill:OXB}));
+    const t = el("text",{x:X(p[0]),y:Y(p[1])-10,"text-anchor":"middle",class:"val"});
+    t.textContent=p[1].toFixed(1); svg.appendChild(t);
+    const xl = el("text",{x:X(p[0]),y:H-padB+16,"text-anchor":"middle"});
+    xl.textContent=p[0]+"d"; svg.appendChild(xl);
+  });
+  svg.appendChild(el("line",{x1:padL,y1:H-padB,x2:W-20,y2:H-padB,stroke:RULE}));
+  const yl = el("text",{x:padL-6,y:top+6,"text-anchor":"end"}); yl.textContent="pp"; svg.appendChild(yl);
+})();
+
+// ============ planner ============
+// Illustrative candidate set, calibrated to the paper's heterogeneity:
+// tau larger with infrastructure; desert negatively associated with tau.
+function seeded(seed){ let s=seed; return ()=> (s = (s*1103515245+12345) % 2147483648) / 2147483648; }
+function makeCandidates(){
+  const rnd = seeded(20260806), out=[];
+  for (let i=1;i<=48;i++){
+    const hosp = rnd() < 0.55, sup = rnd() < (hosp?0.55:0.25);
+    const desert = (!hosp && rnd() < 0.75) ? 1 : 0;
+    const women = Math.round(8000 + rnd()*82000);
+    // subgroup-calibrated predicted gain (pp -> proportion), noise added
+    let tau = 0.050 + (hosp?0.045:0) + (sup?0.055:0) + (rnd()-0.5)*0.03;
+    if (desert) tau -= 0.012;
+    tau = Math.min(0.17, Math.max(0.02, tau));
+    const prof = (hosp?"H":"–") + (sup?"S":"–") + (desert?" · desert":"");
+    out.push({name:"Subdistrict "+String(i).padStart(2,"0"), profile:prof, women, tau, desert});
+  }
+  return out;
+}
+let CAND = makeCandidates();
+
+function topK(lam, K){
+  return CAND.map(c => ({...c, s: c.women * ((1-lam)*c.tau + lam*c.desert)}))
+             .sort((a,b)=>b.s-a.s).slice(0,K);
+}
+function frontier(K){
+  const pts=[];
+  for (let l=0;l<=1.0001;l+=0.05){
+    const sel = topK(l,K);
+    pts.push({lam:l,
+      adopt: sel.reduce((a,c)=>a+c.women*c.tau,0),
+      reach: sel.reduce((a,c)=>a+c.women*c.desert,0)});
+  }
+  return pts;
+}
+
+function renderPlanner(){
+  const lam = parseFloat(document.getElementById("lam").value);
+  const K = parseInt(document.getElementById("k").value);
+  document.getElementById("lamOut").textContent = "λ = " + lam.toFixed(2);
+  document.getElementById("kOut").textContent = "K = " + K;
+
+  const sel = topK(lam,K);
+  const adopt = sel.reduce((a,c)=>a+c.women*c.tau,0);
+  const reach = sel.reduce((a,c)=>a+c.women*c.desert,0);
+  document.getElementById("totals").innerHTML =
+    "predicted new adopters: <b>" + Math.round(adopt).toLocaleString() + "</b><br>" +
+    "underserved women reached: <b>" + Math.round(reach).toLocaleString() + "</b>";
+
+  document.getElementById("rank").innerHTML = sel.slice(0,10).map(c =>
+    `<li>${c.name} <span class="tag">[${c.profile}] · ${c.women.toLocaleString()} women · τ̂ ${(100*c.tau).toFixed(1)}pp</span></li>`
+  ).join("") + (K>10 ? `<li class="tag" style="list-style:none">… and ${K-10} more</li>` : "");
+
+  // frontier plot
+  const svg = document.getElementById("frontier"); svg.innerHTML = "";
+  const pts = frontier(K);
+  const W=560,H=300,padL=54,padB=40,top=14;
+  const maxA = Math.max(...pts.map(p=>p.adopt))*1.08 || 1;
+  const maxR = Math.max(...pts.map(p=>p.reach))*1.08 || 1;
+  const X=r=>padL+(W-padL-16)*r/maxR, Y=a=>H-padB-(H-padB-top)*a/maxA;
+  svg.appendChild(el("line",{x1:padL,y1:H-padB,x2:W-16,y2:H-padB,stroke:RULE}));
+  svg.appendChild(el("line",{x1:padL,y1:top,x2:padL,y2:H-padB,stroke:RULE}));
+  let d = "M " + pts.map(p=>X(p.reach)+" "+Y(p.adopt)).join(" L ");
+  svg.appendChild(el("path",{d,fill:"none",stroke:TAN,"stroke-width":2}));
+  pts.forEach(p=>svg.appendChild(el("circle",{cx:X(p.reach),cy:Y(p.adopt),r:3,fill:TAN})));
+  // current lambda point
+  svg.appendChild(el("circle",{cx:X(reach),cy:Y(adopt),r:6,fill:OXB,stroke:OX,"stroke-width":2}));
+  const xl = el("text",{x:(padL+W)/2,y:H-10,"text-anchor":"middle"});
+  xl.textContent = "underserved women reached →"; svg.appendChild(xl);
+  const ylab = el("text",{x:padL,y:top-2}); ylab.textContent="predicted adopters ↑"; svg.appendChild(ylab);
+  const l0 = el("text",{x:X(pts[0].reach)+8,y:Y(pts[0].adopt)}); l0.textContent="λ=0"; svg.appendChild(l0);
+  const l1 = el("text",{x:X(pts[pts.length-1].reach)-8,y:Y(pts[pts.length-1].adopt)+14,"text-anchor":"end"}); l1.textContent="λ=1"; svg.appendChild(l1);
+}
+
+// CSV loader: name,women,tau,desert
+document.getElementById("file").addEventListener("change", e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{
+    const lines=r.result.trim().split(/\r?\n/);
+    const head=lines[0].toLowerCase().split(",").map(s=>s.trim());
+    const idx=n=>head.indexOf(n);
+    if(["name","women","tau","desert"].some(n=>idx(n)<0)){ alert("CSV header must be: name,women,tau,desert"); return; }
+    const rows=[];
+    for(let i=1;i<lines.length;i++){
+      const c=lines[i].split(",");
+      if(c.length<head.length) continue;
+      const row={name:c[idx("name")].trim(), profile:"loaded",
+        women:+c[idx("women")], tau:+c[idx("tau")], desert:+c[idx("desert")]?1:0};
+      if([row.women,row.tau].some(isNaN)) continue;
+      rows.push(row);
+    }
+    if(rows.length){ CAND=rows;
+      document.getElementById("k").max = Math.min(60, rows.length);
+      renderPlanner(); }
+  };
+  r.readAsText(f);
+});
+
+document.getElementById("lam").addEventListener("input", renderPlanner);
+document.getElementById("k").addEventListener("input", renderPlanner);
+renderPlanner();
+</script>
+</body>
+</html>
