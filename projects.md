@@ -25,11 +25,10 @@ them.
 </div>
 
 <div class="paper">
-  <p class="paper-title">E-ink storytelling device</p>
+  <p class="paper-title"><a href = "https://mishradibya.com/journal/2026/08/04/e_ink-pic-gen/">E-ink Storytelling with Stable Diffusion</a></p>
   <p class="paper-abstract">
     A repurposed e-ink reader that generates and displays images.
     Built with a 2 year old in mind. 
-    <a href = "https://mishradibya.com/journal/2026/08/04/e_ink-pic-gen/">Link to Post</a>
   </p>
 
 </div>
