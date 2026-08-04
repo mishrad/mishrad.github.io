@@ -51,7 +51,7 @@ permalink: /research/
 
 <div class="paper">
   <p class="paper-title">Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India</p>
-  <p class="paper-meta">With Ritika Sethi. Under review.</p>
+  <p class="paper-meta">With <a href = "https://ritikasethi.com/">Ritika Sethi</a>. Under review.</p>
   <p class="paper-abstract">
     A doubly robust difference-in-differences estimator applied to the
     staggered rollout of Jan Aushadhi Kendra pharmacies, covering nearly
@@ -64,13 +64,13 @@ permalink: /research/
 
 <div class="paper">
   <p class="paper-title">Beyond a Free Lunch: Unintended Consequences of an Out-of-School Nutrition Program on Adolescent Girls' School Enrollment and Health Outcomes</p>
-  <p class="paper-meta">With Tanmay Devi, Ajinkya Keskar, and Ritika Sethi. Under review</p>
+  <p class="paper-meta">With Tanmay Devi, <a href = "https://www.ajinkyakeskar.com">Ajinkya Keskar</a>, and <a href = "https://ritikasethi.com/">Ritika Sethi</a> Under review</p>
      <p class="paper-links"><a href="https://www.ajinkyakeskar.com/files/SABLA_draft.pdf">Draft</a></p>
 </div>
 
 <div class="paper">
   <p class="paper-title">Spectrum Allocation to Public Operators: A Structural Analysis of Set-Asides versus Subsidies in Indian Telecom Auctions</p>
-  <p class="paper-meta">With Rajarshi Bhowal and Nurdaulet Menglibayev.</p>
+  <p class="paper-meta">With <a href = "https://www.rajarshibhowal.com">Rajarshi Bhowal</a>, and Nurdaulet Menglibayev.</p>
    <p class="paper-links"><a href="/assets/files/BMM.pdf">Draft</a></p>
 </div>
 
