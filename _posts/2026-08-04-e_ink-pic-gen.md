@@ -1,6 +1,12 @@
+---
+title: "E-ink Picture generation"
+date: 2026-08-04
+summary: "Create a small browser app which generates images"
+---
+
 # E-ink Picture generation
 
-I wanted to create a quick button to generate images. My toddler is learning new words and I was trying to work with creating an image based on the words she speaks. The current fav - a turtle, a moon, and a fish. Each picture is new. A small computer at home generates them.
+I wanted to create a browser app that generates images. My toddler is learning new words and I was trying to work with creating an image based on the words she speaks. The current fav - a turtle, a moon, and a fish. Each picture is new. A small computer at home generates them.
 
 ## How it works
 
