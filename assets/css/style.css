@@ -287,7 +287,7 @@ img { max-width: 100%; height: auto; }
   width: 8.5rem;
   height: 8.5rem;
   object-fit: cover;
-  border-radius: 3px;
+  border-radius: 50%;
   filter: grayscale(18%);
 }
 
