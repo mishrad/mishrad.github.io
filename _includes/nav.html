@@ -8,7 +8,12 @@
       <a href="{{ '/journal/' | relative_url }}"{% if page.url contains '/journal' %} aria-current="page"{% endif %}>Journal</a>
       <a href="{{ site.resume | relative_url }}">Resume</a>
       <a href="{{ site.cv | relative_url }}">CV</a>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme">Dark</button>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme">
+        <svg class="icon theme-icon-moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+        <svg class="icon theme-icon-sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+        <span class="theme-word theme-word-dark">Dark</span>
+        <span class="theme-word theme-word-light">Light</span>
+      </button>
     </nav>
   </div>
 </header>

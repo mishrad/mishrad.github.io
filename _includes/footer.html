@@ -1,11 +1,11 @@
 <footer class="site-footer">
   <div class="wrap-wide">
     <div class="footer-links">
-      <a href="mailto:{{ site.email }}">Email</a>
-      <a href="https://github.com/{{ site.github }}">GitHub</a>
-      <a href="https://www.linkedin.com/in/{{ site.linkedin }}">LinkedIn</a>
-      {% if site.scholar != "" %}<a href="{{ site.scholar }}">Scholar</a>{% endif %}
-      <a href="{{ site.cv | relative_url }}">CV</a>
+      <a href="mailto:{{ site.email }}"><svg class="icon" aria-hidden="true"><use href="#i-email"></use></svg>Email</a>
+      <a href="https://github.com/{{ site.github }}"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub</a>
+      <a href="https://www.linkedin.com/in/{{ site.linkedin }}"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>LinkedIn</a>
+      {% if site.scholar != "" %}<a href="{{ site.scholar }}"><svg class="icon" aria-hidden="true"><use href="#i-scholar"></use></svg>Scholar</a>{% endif %}
+      <a href="{{ site.cv | relative_url }}"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>CV</a>
     </div>
     <p class="disclaimer">
       Views expressed here are my own and do not represent those of my employer,

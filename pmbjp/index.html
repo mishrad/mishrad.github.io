@@ -7,27 +7,65 @@
 <meta name="description" content="Companion page to Mishra & Sethi, Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India. Interactive efficiency-equity siting planner.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* Palette mirrors assets/css/style.css so this page matches the rest of the site. */
   :root{
-    --paper:#F6F1E7; --paper-deep:#EFE8D9; --ink:#241F19; --ink-soft:#5C5346;
-    --oxblood:#6E1423; --oxblood-bright:#8C2333; --rule:#DDD3BF; --card:#FBF8F1;
-    --tan:#8A7E6D;
+    color-scheme:light;
+    --paper:#f4f8f6; --paper-deep:#e8f0ed; --ink:#12211f; --ink-soft:#40554f;
+    --accent:#0d6b63; --accent-bright:#12897c; --accent-hover:#0a4f4a;
+    --rule:#cfe0da; --card:#fbfdfc;
+    --series-2:#8fb5ad;
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#0d1a1b; --paper-deep:#0f2021; --ink:#e4f0ec; --ink-soft:#a5bfb9;
+    --accent:#5ecfbc; --accent-bright:#7fdcca; --accent-hover:#92e3d4;
+    --rule:#26403e; --card:#142526;
+    --series-2:#3c6f68;
+  }
+  @media(prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --paper:#0d1a1b; --paper-deep:#0f2021; --ink:#e4f0ec; --ink-soft:#a5bfb9;
+      --accent:#5ecfbc; --accent-bright:#7fdcca; --accent-hover:#92e3d4;
+      --rule:#26403e; --card:#142526;
+      --series-2:#3c6f68;
+    }
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:16.5px;line-height:1.6}
+  body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:16.5px;line-height:1.6;transition:background-color .2s ease,color .2s ease}
   .wrap{max-width:920px;margin:0 auto;padding:0 22px 80px}
-  a{color:var(--oxblood)}
+  a{color:var(--accent)}
+  a:hover{color:var(--accent-hover)}
 
-  header.mast{padding:56px 0 30px;border-bottom:3px double var(--oxblood)}
-  .kicker{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--oxblood);margin-bottom:14px}
+  header.mast{padding:22px 0 30px;border-bottom:3px double var(--accent)}
+  .mast-top{display:flex;justify-content:flex-end;margin-bottom:26px}
+  .kicker{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
   h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(30px,5vw,44px);line-height:1.08;letter-spacing:-.015em}
   .authors{margin-top:12px;color:var(--ink-soft)}
   .links{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:13px}
-  .links a{margin-right:18px;text-decoration:none;border-bottom:1px solid var(--oxblood)}
+  .links a{margin-right:18px;text-decoration:none;border-bottom:1px solid var(--accent)}
+
+  /* Theme toggle, same pill as the site header. The glyph is chosen in CSS so it
+     cannot flash the wrong one, and the preference is shared via localStorage. */
+  .theme-toggle{display:inline-flex;align-items:center;gap:.4em;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);background:transparent;border:1px solid var(--rule);border-radius:999px;padding:.3rem .75rem;cursor:pointer;transition:border-color .15s ease,color .15s ease}
+  .theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+  .theme-toggle svg{width:1.05em;height:1.05em;fill:currentColor;flex:none}
+  .theme-icon-sun,.theme-word-light{display:none}
+  :root[data-theme="dark"] .theme-icon-moon,
+  :root[data-theme="dark"] .theme-word-dark{display:none}
+  :root[data-theme="dark"] .theme-icon-sun,
+  :root[data-theme="dark"] .theme-word-light{display:inline-block}
+  @media(prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .theme-icon-moon,
+    :root:not([data-theme="light"]) .theme-word-dark{display:none}
+    :root:not([data-theme="light"]) .theme-icon-sun,
+    :root:not([data-theme="light"]) .theme-word-light{display:inline-block}
+  }
 
   .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-top:none;background:var(--card)}
   .stat{padding:16px 12px;text-align:center;border-right:1px solid var(--rule)}
   .stat:last-child{border-right:none}
-  .stat .n{font-family:'Fraunces',serif;font-weight:700;font-size:26px;color:var(--oxblood)}
+  .stat .n{font-family:'Fraunces',serif;font-weight:700;font-size:26px;color:var(--accent)}
   .stat .l{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
   @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.stat:nth-child(n+3){border-top:1px solid var(--rule)}}
 
@@ -40,11 +78,22 @@
   .chart-title{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
   svg text{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:var(--ink-soft)}
   svg .val{fill:var(--ink);font-size:12px}
+  /* Chart marks are styled here rather than painted from JS, so they follow the
+     theme without the charts having to be redrawn. */
+  svg .bar-1{fill:var(--accent-bright)}
+  svg .bar-2{fill:var(--series-2)}
+  svg .axis{stroke:var(--rule)}
+  svg .ref{stroke:var(--accent);stroke-dasharray:4 4;opacity:.55}
+  svg .line-1{fill:none;stroke:var(--accent-bright);stroke-width:2.5}
+  svg .dot-1{fill:var(--accent-bright)}
+  svg .line-2{fill:none;stroke:var(--series-2);stroke-width:2}
+  svg .dot-2{fill:var(--series-2)}
+  svg .dot-current{fill:var(--accent-bright);stroke:var(--accent);stroke-width:2}
 
   .robust{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
   @media(max-width:700px){.robust{grid-template-columns:1fr}}
-  .rcard{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--oxblood);padding:14px 16px;border-radius:0 4px 4px 0}
-  .rcard .t{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--oxblood);margin-bottom:6px}
+  .rcard{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent);padding:14px 16px;border-radius:0 4px 4px 0}
+  .rcard .t{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
   .rcard p{font-size:14.5px}
 
   .eq{background:var(--paper-deep);border:1px solid var(--rule);border-radius:4px;padding:14px 18px;font-family:'IBM Plex Mono',monospace;font-size:14px;margin:14px 0;overflow-x:auto;white-space:nowrap}
@@ -53,27 +102,45 @@
   @media(max-width:760px){.planner{grid-template-columns:1fr}}
   .panel{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:16px}
   .label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
-  .wval{color:var(--oxblood)}
-  input[type=range]{width:100%;accent-color:var(--oxblood);margin:4px 0 2px}
+  .wval{color:var(--accent)}
+  input[type=range]{width:100%;accent-color:var(--accent);margin:4px 0 2px}
   .ends{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);margin-bottom:14px}
   .totals{font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.9;border-top:1px solid var(--rule);margin-top:6px;padding-top:10px}
-  .totals b{color:var(--oxblood);font-weight:500}
+  .totals b{color:var(--accent);font-weight:500}
   ol.rank{margin:6px 0 0 20px}
   ol.rank li{margin-bottom:6px;font-size:14px}
-  ol.rank li::marker{font-family:'IBM Plex Mono',monospace;color:var(--oxblood)}
+  ol.rank li::marker{font-family:'IBM Plex Mono',monospace;color:var(--accent)}
   .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft)}
   .csv{border-top:1px solid var(--rule);margin-top:14px;padding-top:12px}
   .csv input{font-family:'IBM Plex Mono',monospace;font-size:12px;width:100%}
   .csv p{font-size:12px;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;line-height:1.6;margin-top:6px}
 
-  footer{margin-top:64px;padding-top:18px;border-top:3px double var(--oxblood);font-size:13.5px;color:var(--ink-soft)}
+  footer{margin-top:64px;padding-top:18px;border-top:3px double var(--accent);font-size:13.5px;color:var(--ink-soft)}
   footer .cite{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--paper-deep);border:1px solid var(--rule);border-radius:4px;padding:10px 14px;margin-top:10px}
 </style>
+<script>
+  // Runs before paint so the theme never flashes. Shares the 'theme' key with the
+  // rest of the site, so a preference set there carries over to this page.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 <div class="wrap">
 
 <header class="mast">
+  <div class="mast-top">
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme">
+      <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 15.32A9.75 9.75 0 0 1 8.68 2.36a.75.75 0 0 0-.98-.95 10.75 10.75 0 1 0 14.9 14.9.75.75 0 0 0-.96-.99Z"/></svg>
+      <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-14a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm0 16a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V20a1 1 0 0 1 1-1ZM3 12a1 1 0 0 1 1-1h1.5a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Zm15.5-1H20a1 1 0 1 1 0 2h-1.5a1 1 0 1 1 0-2ZM5.64 5.64a1 1 0 0 1 1.41 0l1.07 1.06A1 1 0 0 1 6.7 8.12L5.64 7.05a1 1 0 0 1 0-1.41Zm10.24 10.24a1 1 0 0 1 1.42 0l1.06 1.07a1 1 0 0 1-1.41 1.41l-1.07-1.06a1 1 0 0 1 0-1.42ZM18.36 5.64a1 1 0 0 1 0 1.41L17.3 8.12a1 1 0 1 1-1.42-1.42l1.07-1.06a1 1 0 0 1 1.41 0ZM8.12 15.88a1 1 0 0 1 0 1.42l-1.07 1.06a1 1 0 0 1-1.41-1.41l1.06-1.07a1 1 0 0 1 1.42 0Z"/></svg>
+      <span class="theme-word-dark">Dark</span>
+      <span class="theme-word-light">Light</span>
+    </button>
+  </div>
   <div class="kicker">Companion Page · Working Paper · Under Review</div>
   <h1>Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India</h1>
   <p class="authors">Dibya Mishra · Ritika Sethi (Harris School of Public Policy, University of Chicago)</p>
@@ -183,9 +250,34 @@
 
 <script>
 // ============ shared helpers ============
-const OX = "#6E1423", OXB = "#8C2333", TAN = "#B8AD98", RULE = "#DDD3BF", SOFT = "#5C5346";
+// Chart marks carry classes instead of literal colors; the stylesheet supplies the
+// palette, so the charts follow the light/dark theme with no redraw.
 function el(n, attrs){ const e = document.createElementNS("http://www.w3.org/2000/svg", n);
   for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+// ============ theme toggle ============
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function current() {
+    var set = document.documentElement.getAttribute('data-theme');
+    if (set) return set;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function label() {
+    var dark = current() === 'dark';
+    btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    btn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+  }
+  label();
+  btn.addEventListener('click', function () {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    label();
+  });
+})();
 
 // ============ heterogeneity chart (Table III, real numbers) ============
 (function(){
@@ -200,10 +292,10 @@ function el(n, attrs){ const e = document.createElementNS("http://www.w3.org/200
   const gw = (W - padL - 20) / groups.length;
   groups.forEach((g,i)=>{
     const x0 = padL + i*gw + gw*0.18, bw = gw*0.26;
-    [["yes",g.yes,OXB],["no",g.no,TAN]].forEach(([tag,v,col],j)=>{
+    [["yes",g.yes,"bar-1"],["no",g.no,"bar-2"]].forEach(([tag,v,cls],j)=>{
       const h = (H - padB - top) * v / maxV;
       const x = x0 + j*(bw+8), y = H - padB - h;
-      svg.appendChild(el("rect",{x,y,width:bw,height:h,fill:col,rx:2}));
+      svg.appendChild(el("rect",{x,y,width:bw,height:h,class:cls,rx:2}));
       const t = el("text",{x:x+bw/2,y:y-6,"text-anchor":"middle",class:"val"});
       t.textContent = v.toFixed(1); svg.appendChild(t);
       const lab = el("text",{x:x+bw/2,y:H-padB+16,"text-anchor":"middle"});
@@ -214,7 +306,7 @@ function el(n, attrs){ const e = document.createElementNS("http://www.w3.org/200
     const sg = el("text",{x:padL+i*gw+gw/2,y:H-padB+50,"text-anchor":"middle"});
     sg.textContent = g.sig; svg.appendChild(sg);
   });
-  svg.appendChild(el("line",{x1:padL,y1:H-padB,x2:W-10,y2:H-padB,stroke:RULE}));
+  svg.appendChild(el("line",{x1:padL,y1:H-padB,x2:W-10,y2:H-padB,class:"axis"}));
 })();
 
 // ============ exposure ramp (Table IV, real numbers) ============
@@ -224,19 +316,19 @@ function el(n, attrs){ const e = document.createElementNS("http://www.w3.org/200
   const W=840,H=240,padL=44,padB=36,top=18,maxX=380,maxY=12;
   const X=d=>padL+(W-padL-20)*d/maxX, Y=v=>H-padB-(H-padB-top)*v/maxY;
   // headline reference line
-  svg.appendChild(el("line",{x1:padL,y1:Y(9.6),x2:W-20,y2:Y(9.6),stroke:OX,"stroke-dasharray":"4 4",opacity:.5}));
+  svg.appendChild(el("line",{x1:padL,y1:Y(9.6),x2:W-20,y2:Y(9.6),class:"ref"}));
   const hl = el("text",{x:W-22,y:Y(9.6)-6,"text-anchor":"end"}); hl.textContent="headline 9.6pp"; svg.appendChild(hl);
   // path
   let d = "M " + pts.map(p=>X(p[0])+" "+Y(p[1])).join(" L ");
-  svg.appendChild(el("path",{d,fill:"none",stroke:OXB,"stroke-width":2.5}));
+  svg.appendChild(el("path",{d,class:"line-1"}));
   pts.forEach(p=>{
-    svg.appendChild(el("circle",{cx:X(p[0]),cy:Y(p[1]),r:5,fill:OXB}));
+    svg.appendChild(el("circle",{cx:X(p[0]),cy:Y(p[1]),r:5,class:"dot-1"}));
     const t = el("text",{x:X(p[0]),y:Y(p[1])-10,"text-anchor":"middle",class:"val"});
     t.textContent=p[1].toFixed(1); svg.appendChild(t);
     const xl = el("text",{x:X(p[0]),y:H-padB+16,"text-anchor":"middle"});
     xl.textContent=p[0]+"d"; svg.appendChild(xl);
   });
-  svg.appendChild(el("line",{x1:padL,y1:H-padB,x2:W-20,y2:H-padB,stroke:RULE}));
+  svg.appendChild(el("line",{x1:padL,y1:H-padB,x2:W-20,y2:H-padB,class:"axis"}));
   const yl = el("text",{x:padL-6,y:top+6,"text-anchor":"end"}); yl.textContent="pp"; svg.appendChild(yl);
 })();
 
@@ -300,13 +392,13 @@ function renderPlanner(){
   const maxA = Math.max(...pts.map(p=>p.adopt))*1.08 || 1;
   const maxR = Math.max(...pts.map(p=>p.reach))*1.08 || 1;
   const X=r=>padL+(W-padL-16)*r/maxR, Y=a=>H-padB-(H-padB-top)*a/maxA;
-  svg.appendChild(el("line",{x1:padL,y1:H-padB,x2:W-16,y2:H-padB,stroke:RULE}));
-  svg.appendChild(el("line",{x1:padL,y1:top,x2:padL,y2:H-padB,stroke:RULE}));
+  svg.appendChild(el("line",{x1:padL,y1:H-padB,x2:W-16,y2:H-padB,class:"axis"}));
+  svg.appendChild(el("line",{x1:padL,y1:top,x2:padL,y2:H-padB,class:"axis"}));
   let d = "M " + pts.map(p=>X(p.reach)+" "+Y(p.adopt)).join(" L ");
-  svg.appendChild(el("path",{d,fill:"none",stroke:TAN,"stroke-width":2}));
-  pts.forEach(p=>svg.appendChild(el("circle",{cx:X(p.reach),cy:Y(p.adopt),r:3,fill:TAN})));
+  svg.appendChild(el("path",{d,class:"line-2"}));
+  pts.forEach(p=>svg.appendChild(el("circle",{cx:X(p.reach),cy:Y(p.adopt),r:3,class:"dot-2"})));
   // current lambda point
-  svg.appendChild(el("circle",{cx:X(reach),cy:Y(adopt),r:6,fill:OXB,stroke:OX,"stroke-width":2}));
+  svg.appendChild(el("circle",{cx:X(reach),cy:Y(adopt),r:6,class:"dot-current"}));
   const xl = el("text",{x:(padL+W)/2,y:H-10,"text-anchor":"middle"});
   xl.textContent = "underserved women reached →"; svg.appendChild(xl);
   const ylab = el("text",{x:padL,y:top-2}); ylab.textContent="predicted adopters ↑"; svg.appendChild(ylab);

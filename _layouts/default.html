@@ -13,6 +13,7 @@
   </script>
 </head>
 <body>
+  {% include icons.html %}
   {% include nav.html %}
   {{ content }}
   {% include footer.html %}
@@ -25,7 +26,14 @@
         if (set) return set;
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
-      function label() { btn.textContent = current() === 'dark' ? 'Light' : 'Dark'; }
+      // The icon and word inside the button are swapped by CSS; JS only keeps
+      // the accessible name and pressed state in sync.
+      function label() {
+        var dark = current() === 'dark';
+        btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+        btn.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+        btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      }
       label();
       btn.addEventListener('click', function () {
         var next = current() === 'dark' ? 'light' : 'dark';

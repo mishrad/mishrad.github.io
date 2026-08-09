@@ -13,11 +13,11 @@ title: Home
         Chicago, Illinois
       </p>
       <p class="linkrow">
-        <a href="mailto:{{ site.email }}">Email</a>
-        <a href="https://www.linkedin.com/in/{{ site.linkedin }}">LinkedIn</a>
-        <a href="https://github.com/{{ site.github }}">GitHub</a>
-        {% if site.scholar != "" %}<a href="{{ site.scholar }}">Scholar</a>{% endif %}
-        <a href="{{ site.cv | relative_url }}">CV</a>
+        <a href="mailto:{{ site.email }}"><svg class="icon" aria-hidden="true"><use href="#i-email"></use></svg>Email</a>
+        <a href="https://www.linkedin.com/in/{{ site.linkedin }}"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>LinkedIn</a>
+        <a href="https://github.com/{{ site.github }}"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub</a>
+        {% if site.scholar != "" %}<a href="{{ site.scholar }}"><svg class="icon" aria-hidden="true"><use href="#i-scholar"></use></svg>Scholar</a>{% endif %}
+        <a href="{{ site.cv | relative_url }}"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>CV</a>
       </p>
     </div>
     <img class="hero-portrait" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Dibya Mishra">
