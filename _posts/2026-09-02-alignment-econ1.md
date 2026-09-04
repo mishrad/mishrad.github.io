@@ -35,7 +35,7 @@ Suppose I observe that they generated $100,000 in sales this quarter. Did they w
 
 Maybe.
 
-But sales depend on more than effort. Perhaps demand happened to be unusually strong. A salesperson who barely worked in a booming market might generate $100,000, while someone who worked extremely hard during a terrible quarter might generate only $80,000.
+But sales depend on more than effort. Perhaps demand happened to be unusually strong. A salesperson who barely worked in a booming market might generate \$100,000, while someone who worked extremely hard during a terrible quarter might generate only \$80,000.
 
 The manager sees sales, but what they really want to incentivize is effort. 
 
@@ -43,8 +43,8 @@ Now suppose the manager observes another signal: overall demand in the salespers
 
 That signal does not directly tell us how hard the salesperson worked. But it changes how we interpret their sales.
 
-$100,000 of sales during an enormous market boom is one thing.
-$100,000 of sales while the entire regional market is collapsing is quite another.
+\$100,000 of sales during an enormous market boom is one thing.
+\$100,000 of sales while the entire regional market is collapsing is quite another.
 
 Market conditions therefore provide information about the employee's hidden action over and above the information contained in sales alone.
 
