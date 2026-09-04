@@ -35,7 +35,7 @@ Suppose I observe that they generated $100,000 in sales this quarter. Did they w
 
 Maybe.
 
-But sales depend on more than effort. Perhaps demand happened to be unusually strong. A salesperson who barely worked in a booming market might generate USD 100,000 dollars, while someone who worked extremely hard during a terrible quarter might generate only 80,000 dollars.
+But sales depend on more than effort. Perhaps demand happened to be unusually strong. A salesperson who barely worked in a booming market might generate 100,000 dollars, while someone who worked extremely hard during a terrible quarter might generate only 80,000 dollars.
 
 The manager sees sales, but what they really want to incentivize is effort. 
 
