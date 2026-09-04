@@ -8,14 +8,23 @@ permalink: /projects/
 
 <h1>Projects</h1>
 
+<section class="section">
+<h2>Main Projects</h2>
+
+<p style="color: var(--ink-soft);">
+Research and professional work. Coming soon.
+</p>
+
+</section>
+
+<section class="section">
+<h2>Home Projects</h2>
+
 <p style="color: var(--ink-soft);">
 Things I build at home, mostly at the intersection of small hardware and
 language models. These are not research. They are how I learn tools by using
 them.
 </p>
-
-<section class="section">
-<h2>Hardware</h2>
 
 <div class="paper">
   <p class="paper-title">Spiderbot</p>
