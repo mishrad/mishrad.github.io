@@ -8,6 +8,23 @@ permalink: /research/
 
 <h1>Research</h1>
 
+<p>
+My research studies decision-making, incentives, and allocation across
+economic and AI systems. I combine structural econometrics, causal
+inference, economic theory, and machine learning, with current work
+increasingly connecting economic models of information and incentives to
+AI behavior and evaluation.
+</p>
+
+<section class="section">
+<h2>Research areas</h2>
+<p class="fields">
+<strong>Decision-making &amp; representation</strong> &mdash; consumer choice, model representations, and interpretability.<br>
+<strong>Markets, incentives &amp; allocation</strong> &mdash; healthcare, digital markets, market design, and AI economics.<br>
+<strong>Empirical &amp; computational methods</strong> &mdash; structural econometrics, causal inference, machine learning, and optimal transport.
+</p>
+</section>
+
 <section class="section">
 <h2>Publications</h2>
 
@@ -36,7 +53,7 @@ permalink: /research/
 <section class="section">
 <h2>Working papers</h2>
 
-<div class="paper">
+<div class="paper" id="quality-considerations">
   <p class="paper-title">Quality Considerations and Universal Healthcare</p>
   <p class="paper-meta">Working Paper</p>
   <p class="paper-abstract">
@@ -49,7 +66,7 @@ permalink: /research/
   <p class="paper-links"><a href="/assets/files/qualcons.pdf">Draft</a></p>
 </div>
 
-<div class="paper">
+<div class="paper" id="pennies-for-pads">
   <p class="paper-title">Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India</p>
   <p class="paper-meta">With <a href = "https://ritikasethi.com/">Ritika Sethi</a>. Under review.</p>
   <p class="paper-abstract">

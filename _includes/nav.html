@@ -3,7 +3,8 @@
     <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <nav class="site-nav">
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
-      <a href="{{ '/research/' | relative_url }}"{% if page.url contains '/research' %} aria-current="page"{% endif %}>Research</a>
+      <a href="{{ '/research/' | relative_url }}"{% if page.url == '/research/' %} aria-current="page"{% endif %}>Research</a>
+      <a href="{{ '/research-agenda/' | relative_url }}"{% if page.url contains '/research-agenda' %} aria-current="page"{% endif %}>Agenda</a>
       <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects' %} aria-current="page"{% endif %}>Projects</a>
       <a href="{{ '/journal/' | relative_url }}"{% if page.url contains '/journal' %} aria-current="page"{% endif %}>Journal</a>
       <a href="{{ site.resume | relative_url }}">Resume</a>

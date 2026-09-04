@@ -8,22 +8,41 @@ permalink: /projects/
 
 <h1>Projects</h1>
 
-<section class="section">
-<h2>Main Projects</h2>
+<p>
+This page collects research prototypes, computational explorations, and
+things I build to learn.
+</p>
 
-<p style="color: var(--ink-soft);">
-Research and professional work. Coming soon.
+<section class="section">
+<h2>Research Projects</h2>
+
+<p class="paper-abstract">
+Research code and experiments will be added here as they are cleaned for
+public release.
 </p>
 
 </section>
 
 <section class="section">
-<h2>Home Projects</h2>
+<h2>Research Tools &amp; Explorations</h2>
 
-<p style="color: var(--ink-soft);">
-Things I build at home, mostly at the intersection of small hardware and
-language models. These are not research. They are how I learn tools by using
-them.
+<div class="paper">
+  <p class="paper-title"><a href="{{ '/pmbjp/' | relative_url }}">Pennies for Pads &mdash; Results &amp; Siting Planner</a></p>
+  <p class="paper-abstract">
+    An interactive companion to the paper: an efficiency-equity planner for
+    siting subsidized pharmacies, built to make the paper's counterfactuals
+    explorable rather than static.
+  </p>
+</div>
+
+</section>
+
+<section class="section">
+<h2>Things I Build</h2>
+
+<p class="paper-abstract">
+Small hardware and software projects I build outside my research. These
+are mostly ways for me to learn new tools by making something concrete.
 </p>
 
 <div class="paper">

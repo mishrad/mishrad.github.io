@@ -14,11 +14,12 @@ Written to think, not to conclude.
 </p>
 
 <section class="section">
-<h2>AlignmentxEcon Series</h2>
+<h2>Alignment &times; Econ</h2>
 
 <p style="color: var(--ink-soft);">
-Reading classic economics papers on incentives and information for what they
-can teach us about aligning modern AI systems.
+Essays and experiments connecting classic ideas from economics &mdash;
+incentives, information, contracts, mechanism design, and strategic
+behavior &mdash; to the problem of building and evaluating AI systems.
 </p>
 
 <div class="paper">
