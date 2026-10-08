@@ -102,20 +102,10 @@ AI behavior and evaluation.
   <p class="paper-title">Competition, Adoption Dynamics, and Safety Evaluation in AI Model Markets</p>
   <p class="paper-meta">Work in progress.</p>
   <p class="paper-abstract">
-    How does usage shift across competing AI model services, and how much
-    of that reallocation can public safety evaluations actually assess?
-    This project links historical OpenRouter requests and provider prices
-    to capability and safety benchmarks, retaining services whose
-    evaluations are missing. It measures product turnover, adoption
-    persistence, and the coverage gaps that arise when benchmarked models
-    differ from those receiving economic use. Bounds on changes in the
-    safety benchmark composition of usage show what can be learned without
-    assigning scores to unevaluated services. A retrospective audit compares
-    ways to prioritize additional evaluations, while a conditional dynamic
-    adoption model examines how persistence reflects incumbent advantage
-    and lasting product appeal. The analysis distinguishes platform usage
-    and benchmark scores from industry-wide demand and real-world safety
-    outcomes.
+    Links OpenRouter usage and prices to public safety benchmarks to study
+    competition, adoption, and gaps in evaluation coverage. Examines what
+    these gaps imply for assessing changes in model use and prioritizing
+    further safety evaluations.
   </p>
 </div>
 
@@ -123,21 +113,10 @@ AI behavior and evaluation.
   <p class="paper-title">Neural-Assisted Sequential Treatment Decisions under Limited Experimental Budgets</p>
   <p class="paper-meta">With Ritika Sethi. Work in progress.</p>
   <p class="paper-abstract">
-    When should an experiment stop collecting evidence on whether a new
-    treatment is worth adopting? This project studies decisions about a
-    prespecified treatment relative to a reference and an economically
-    meaningful adoption threshold. A neural network trained on earlier
-    experiments supplies a common prognostic adjustment to newly collected
-    outcomes; sequential betting rules allow repeated checks while
-    controlling incorrect directional conclusions, even when the prediction
-    model is misspecified. Simulations compare neural adjustment, boosting,
-    direct estimation, and reuse of historical reference outcomes under
-    limited budgets and unequal acquisition costs. Audits using three public
-    economic trial archives examine whether predictive adjustment improves
-    precision in practice. The aim is to identify when learned prediction
-    reduces the cost of a reliable decision, and when weak prediction, tight
-    budgets, or effects near the adoption threshold leave the evidence
-    unresolved.
+    Studies when neural prediction can reduce the cost of deciding whether
+    a treatment is worth adopting. Combines adjustment using earlier
+    experiments with valid sequential stopping rules, comparing performance
+    under limited budgets in simulations and public economic trial data.
   </p>
 </div>
 
@@ -145,19 +124,10 @@ AI behavior and evaluation.
   <p class="paper-title">The Economic Value of AI Capability Gains</p>
   <p class="paper-meta">SPAR fellowship project, Fall 2026. Mentored by Pavel Kocourek. Work in progress.</p>
   <p class="paper-abstract">
-    What economic value does an incremental improvement in AI capability
-    unlock, and how does that value change as adoption and automation
-    expand? This project develops a map connecting capability thresholds to
-    the value of tasks in sectors such as software engineering, customer
-    support, and cybersecurity. It combines sector-level evidence, model
-    pricing and adoption patterns, and a formal account of shifting
-    bottlenecks as more tasks become automatable. The analysis separates
-    adoption-driven revenue growth from willingness to pay for additional
-    capability, and distinguishes private willingness to pay from social
-    value. These distinctions inform whether frontier labs can sustain a
-    premium as open-weight alternatives catch up, with implications for
-    competition, safety investment, and AI governance over the next five
-    to ten years.
+    Studies how improvements in AI capability translate into economic value
+    across tasks and sectors. Combines pricing and adoption evidence with
+    economic modeling to examine frontier-model premiums, open-weight
+    competition, and implications for safety investment.
   </p>
 </div>
 
