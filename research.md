@@ -111,7 +111,7 @@ AI behavior and evaluation.
 
 <div class="paper" id="sequential-treatment-decisions">
   <p class="paper-title">Neural-Assisted Sequential Treatment Decisions under Limited Experimental Budgets</p>
-  <p class="paper-meta">With Ritika Sethi. Work in progress.</p>
+  <p class="paper-meta">Work in progress.</p>
   <p class="paper-abstract">
     Studies when neural prediction can reduce the cost of deciding whether
     a treatment is worth adopting. Combines adjustment using earlier
