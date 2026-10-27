@@ -117,16 +117,6 @@ The full record of teaching, awards, service, and conferences is in my CV.
   </p>
 </div>
 
-<div class="paper">
-  <p class="paper-title">When Do Predictions Save Measurements?</p>
-  <p class="paper-meta">Research draft, 2026.</p>
-  <p class="paper-abstract">
-    Compares prediction-assisted estimators in cash-transfer and
-    email-marketing data, examining measurement efficiency, calibration,
-    and confidence-interval coverage through repeated sampling and simulation.
-  </p>
-</div>
-
 </section>
 
 <section class="section">
@@ -152,16 +142,6 @@ The full record of teaching, awards, service, and conferences is in my CV.
 <div class="paper">
   <p class="paper-title">Dynamic Competition and Frontier AI Model Release</p>
   <p class="paper-meta">Work in progress.</p>
-</div>
-
-<div class="paper" id="sequential-treatment-decisions">
-  <p class="paper-title">Neural-Assisted Sequential Treatment Decisions under Limited Experimental Budgets</p>
-  <p class="paper-meta">Work in progress.</p>
-  <p class="paper-abstract">
-    Studies when neural prediction can reduce the cost of deciding whether
-    a treatment is worth adopting. Combines adjustment using earlier
-    experiments with valid sequential stopping rules under limited budgets.
-  </p>
 </div>
 
 <div class="paper">
