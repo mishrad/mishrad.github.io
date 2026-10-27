@@ -30,10 +30,6 @@ behavior &mdash; to the problem of building and evaluating AI systems.
   </p>
 </div>
 
-<div class="paper">
-  <p class="paper-title" style="color: var(--ink-soft);">Part 2: Coming soon</p>
-</div>
-
 </section>
 
 <section class="section">

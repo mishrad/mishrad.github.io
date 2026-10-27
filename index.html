@@ -7,9 +7,10 @@ title: Home
 
   <section class="hero">
     <div>
-      <h1>Dibya Mishra</h1>
+      <h1>Dibya Deepta Mishra</h1>
       <p class="hero-detail">
         Economist studying decision-making, markets, and AI<br>
+        PhD in Economics, Rice University &middot; MS in Computer Science, Georgia Tech<br>
         Chicago, Illinois
       </p>
       <p class="linkrow">
@@ -17,46 +18,45 @@ title: Home
         <a href="https://www.linkedin.com/in/{{ site.linkedin }}"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>LinkedIn</a>
         <a href="https://github.com/{{ site.github }}"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub</a>
         {% if site.scholar != "" %}<a href="{{ site.scholar }}"><svg class="icon" aria-hidden="true"><use href="#i-scholar"></use></svg>Scholar</a>{% endif %}
-        <a href="{{ site.cv | relative_url }}"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>CV</a>
+        <a href="{{ site.resume | relative_url }}" aria-label="View tech resume PDF"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>Resume</a>
+        <a href="{{ site.cv | relative_url }}" aria-label="View academic CV PDF"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>CV</a>
       </p>
     </div>
-    <img class="hero-portrait" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Dibya Mishra">
+    <img class="hero-portrait" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Dibya Deepta Mishra">
   </section>
 
   <section class="section">
     <h2>About</h2>
     <p>
       I am an economist with a PhD in Economics from Rice University and an
-      MS in Computer Science from Georgia Tech. I study how people, firms,
-      and increasingly AI systems make decisions when information and
-      attention are imperfect.
+      MS in Computer Science from Georgia Tech. My work combines industrial
+      organization, econometrics, causal inference, and machine learning to
+      study hospital choice, pricing, and the economics of AI.
     </p>
     <p>
       I am currently a fellow in the Supervised Program for Alignment
-      Research (SPAR), working on the economic value of AI capability gains
-      under the mentorship of Pavel Kocourek.
+      Research (SPAR), estimating demand for AI models and willingness to pay
+      for capability and safety under the mentorship of Pavel Kocourek.
     </p>
     <p>
-      My work combines economic theory, structural and causal econometrics,
-      machine learning, and computational methods. My economics research
-      studies consumer choice, healthcare markets, and allocation; my recent
-      AI work examines model decision-making, interpretability, evaluation,
-      and incentives.
+      Previously, I was an Associate at Cornerstone Research (January
+      2025&ndash;September 2026), applying demand models and causal methods to
+      competition and litigation questions. At Amazon Retail Pricing
+      (May&ndash;August 2023), I combined product-text embeddings and gradient
+      boosting to reduce demand forecast RMSE by 5% relative to standard
+      logit models.
     </p>
     <p>
-      A recurring theme across my work is the gap between what a
-      decision-maker could optimize and what it actually considers, observes,
-      or learns.
+      Earlier roles include research at the Indian School of Business and
+      Business and Regulatory Risk Research at HSBC. I work primarily in
+      Python, SQL, R, and Stata; my resume covers professional experience
+      and technical skills, and my CV includes teaching, awards, and service.
     </p>
     <p>
-      This site is my public research page and journal. The
-      <a href="{{ '/research/' | relative_url }}">research</a> page lists my
-      papers, the <a href="{{ '/research-agenda/' | relative_url }}">research
-      agenda</a> page describes the questions tying that work together, the
-      <a href="{{ '/journal/' | relative_url }}">journal</a> holds notes on
-      what I am reading and working through, and the
-      <a href="{{ '/projects/' | relative_url }}">projects</a> page covers
-      things I build to learn.
+      Explore my <a href="{{ '/research/' | relative_url }}">research</a>,
+      <a href="{{ '/research-agenda/' | relative_url }}">research agenda</a>,
+      <a href="{{ '/projects/' | relative_url }}">projects</a>, and
+      <a href="{{ '/journal/' | relative_url }}">journal</a>.
     </p>
   </section>
 
@@ -66,26 +66,24 @@ title: Home
     <div class="paper">
       <p class="paper-title">Decision-making &amp; representation</p>
       <p class="paper-abstract">
-        Consumer consideration, discrete choice, model representations,
-        interpretability, and how human or artificial agents form and use
-        internal signals when making choices.
+        Hospital consideration sets and tests of how language-model
+        representations relate to observed choices.
       </p>
     </div>
 
     <div class="paper">
       <p class="paper-title">Markets, incentives &amp; allocation</p>
       <p class="paper-abstract">
-        Healthcare, digital markets, market design, AI economics,
-        monitoring, incentives, matching, and resource allocation.
+        Healthcare access, spectrum auctions, AI demand, and incentives
+        for safety assessment.
       </p>
     </div>
 
     <div class="paper">
       <p class="paper-title">Empirical &amp; computational methods</p>
       <p class="paper-abstract">
-        Structural econometrics, causal inference, machine learning,
-        optimal transport, and computational methods for studying economic
-        and AI systems.
+        Structural demand estimation, policy evaluation, and prediction-assisted
+        experimental decisions.
       </p>
     </div>
 
@@ -120,46 +118,12 @@ title: Home
   </section>
 
   <section class="section">
-    <h2>Current Directions</h2>
-
-    <div class="paper">
-      <p class="paper-title">AI decision-making &amp; interpretability</p>
-      <p class="paper-abstract">
-        How language models represent preferences, comparisons, utilities,
-        or other decision-relevant information, and when those
-        representations actually affect behavior.
-      </p>
-    </div>
-
-    <div class="paper">
-      <p class="paper-title">Economics of AI &amp; incentives</p>
-      <p class="paper-abstract">
-        How ideas from principal-agent theory, information economics,
-        mechanism design, and evaluation can inform the design and
-        governance of increasingly capable AI agents.
-      </p>
-    </div>
-
-    <div class="paper">
-      <p class="paper-title">Choice, allocation &amp; optimal transport</p>
-      <p class="paper-abstract">
-        Using optimal transport and related tools to study choice under
-        changing environments, matching, allocation, and distribution shift.
-      </p>
-    </div>
-
-  </section>
-
-  <section class="section">
     <p class="eyebrow">From the journal</p>
     <h2>Alignment &times; Econ</h2>
 
     <p class="paper-abstract" style="margin-bottom: 1.25rem;">
-      What can economics teach us about building and evaluating AI agents?
-      A personal essay series in my journal, connecting classic ideas from
-      economics &mdash; incentives, information, contracts, mechanism
-      design, and strategic behavior &mdash; to the problem of monitoring
-      and evaluating AI systems.
+      Essays connecting incentives, information, and contracts to the
+      monitoring and evaluation of AI systems.
     </p>
 
     <div class="paper">
@@ -169,10 +133,6 @@ title: Home
         and aligning modern AI systems.
       </p>
     </div>
-
-    <p class="paper-abstract">
-      Additional essays in the series are forthcoming.
-    </p>
 
   </section>
 

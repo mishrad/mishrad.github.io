@@ -9,21 +9,16 @@ permalink: /research/
 <h1>Research</h1>
 
 <p>
-My research studies decision-making, incentives, and allocation across
-economic and AI systems. I combine structural econometrics, causal
-inference, economic theory, and machine learning, with current work
-increasingly connecting economic models of information and incentives to
-AI behavior and evaluation.
+I study industrial organization, healthcare markets, and the economics of AI
+using structural econometrics, causal inference, and machine learning.
+My work examines hospital choice, policy-driven changes in access, and
+how capability, price, and safety relate to AI adoption.
+The full record of teaching, awards, service, and conferences is in my CV.
 </p>
-
-<section class="section">
-<h2>Research areas</h2>
-<p class="fields">
-<strong>Decision-making &amp; representation</strong> &mdash; consumer choice, model representations, and interpretability.<br>
-<strong>Markets, incentives &amp; allocation</strong> &mdash; healthcare, digital markets, market design, and AI economics.<br>
-<strong>Empirical &amp; computational methods</strong> &mdash; structural econometrics, causal inference, machine learning, and optimal transport.
+<p class="paper-links">
+  <a href="{{ site.resume | relative_url }}" aria-label="View tech resume PDF">Resume</a>
+  <a href="{{ site.cv | relative_url }}" aria-label="View academic CV PDF">CV</a>
 </p>
-</section>
 
 <section class="section">
 <h2>Publications</h2>
@@ -31,82 +26,132 @@ AI behavior and evaluation.
 <div class="paper">
   <p class="paper-title">Local Population Characteristics and Access Equity of 340B Contract Pharmacies</p>
   <p class="paper-meta">With Maura Coughlin. Health Affairs Scholar, 3(7), 2025.</p>
-  <p class="paper-links"><a href="/assets/files/340b_HA1.pdf">Paper</a></p>
+  <p class="paper-links"><a href="{{ '/assets/files/340b_HA1.pdf' | relative_url }}">Paper</a></p>
 </div>
 
 <div class="paper">
   <p class="paper-title">The Wizard of OZ (Opportunity Zones): Spatial Spillovers in Place-Based Programs</p>
-  <p class="paper-meta">With Robin Sickles and Yanfei Sun.,  Seven Decades of Econometrics and Beyond, Springer, 2025.</p>
-  <p class="paper-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-92699-0_6">Journal Link</a></p>
+  <p class="paper-meta">With Robin C. Sickles and Yanfei Sun. In Seven Decades of Econometrics and Beyond, Springer, 2025, pp. 181&ndash;208.</p>
+  <p class="paper-links"><a href="https://link.springer.com/chapter/10.1007/978-3-031-92699-0_6">Journal link</a></p>
 </div>
 
 <div class="paper">
-  <p class="paper-title">AI-assisted teams outperform AI-led teams but not human-only teams in assessing research reproducibility in quantitative social science. (Meta Paper published after Replication Games)</p>
-  <p class="paper-meta">With Abel Brodeur et al.,  Proceedings of the National Academy of Sciences 123.22, 2026.</p>
-  <p class="paper-links"><a href="https://www.pnas.org/doi/abs/10.1073/pnas.2524747123">Journal Link</a></p>
+  <p class="paper-title">AI-assisted teams outperform AI-led teams but not human-only teams in assessing research reproducibility in quantitative social science</p>
+  <p class="paper-meta">With Abel Brodeur et al. Proceedings of the National Academy of Sciences, 123(22), 2026.</p>
+  <p class="paper-links"><a href="https://www.pnas.org/doi/abs/10.1073/pnas.2524747123">Journal link</a></p>
 </div>
-
-
 
 </section>
 
 <section class="section">
-<h2>Working papers</h2>
+<h2>Working papers &amp; manuscripts</h2>
 
 <div class="paper" id="quality-considerations">
   <p class="paper-title">Quality Considerations and Universal Healthcare</p>
-  <p class="paper-meta">Working Paper</p>
+  <p class="paper-meta">Working paper, 2026.</p>
   <p class="paper-abstract">
     A structural model of hospital choice under limited consideration,
-    estimated on data from a large public insurance scheme in India. Artificial
-    neural networks estimate risk-adjusted hospital mortality as the quality
-    measure. Counterfactuals evaluate information provision and hospital
-    empanelment incentives.
+    using neural networks to measure risk-adjusted hospital quality.
+    Counterfactuals evaluate information provision and hospital-participation
+    incentives in a large public insurance scheme in India.
   </p>
-  <p class="paper-links"><a href="/assets/files/qualcons.pdf">Draft</a></p>
+  <p class="paper-links"><a href="{{ '/assets/files/qualcons.pdf' | relative_url }}">Draft</a></p>
 </div>
 
 <div class="paper" id="pennies-for-pads">
   <p class="paper-title">Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India</p>
-  <p class="paper-meta">With <a href = "https://ritikasethi.com/">Ritika Sethi</a>. Under review.</p>
+  <p class="paper-meta">With <a href="https://ritikasethi.com/">Ritika Sethi</a>. Under review, 2026.</p>
   <p class="paper-abstract">
-    A doubly robust difference-in-differences estimator applied to the
-    staggered rollout of Jan Aushadhi Kendra pharmacies, covering nearly
-    500,000 women aged 15 to 24 across two rounds of the National Family Health
-    Survey. Subsidized availability raises sanitary napkin use by 9.6
-    percentage points.
+    Uses doubly robust difference-in-differences and linked survey,
+    administrative, and geospatial data for nearly 500,000 women to study
+    adoption of subsidized menstrual health products in India.
   </p>
-  <p class="paper-links"><a href="/assets/files/RD_PMBJP.pdf">Draft</a> <a href="/pmbjp/">Interactive app</a></p>
+  <p class="paper-links"><a href="{{ '/assets/files/RD_PMBJP.pdf' | relative_url }}">Draft</a> <a href="{{ '/pmbjp/' | relative_url }}">Interactive app</a></p>
 </div>
 
 <div class="paper">
   <p class="paper-title">Beyond a Free Lunch: Unintended Consequences of an Out-of-School Nutrition Program on Adolescent Girls' School Enrollment and Health Outcomes</p>
-  <p class="paper-meta">With Tanmay Devi, <a href = "https://www.ajinkyakeskar.com">Ajinkya Keskar</a>, and <a href = "https://ritikasethi.com/">Ritika Sethi</a> Under review</p>
-     <p class="paper-links"><a href="https://www.ajinkyakeskar.com/files/SABLA_draft.pdf">Draft</a></p>
+  <p class="paper-meta">With Tanmay Devi, <a href="https://www.ajinkyakeskar.com">Ajinkya Keskar</a>, and <a href="https://ritikasethi.com/">Ritika Sethi</a>. Revise and resubmit, Journal of Economic Behavior &amp; Organization, 2026.</p>
+  <p class="paper-links"><a href="https://www.ajinkyakeskar.com/files/SABLA_draft.pdf">Draft</a></p>
 </div>
 
 <div class="paper">
   <p class="paper-title">Spectrum Allocation to Public Operators: A Structural Analysis of Set-Asides versus Subsidies in Indian Telecom Auctions</p>
-  <p class="paper-meta">With <a href = "https://www.rajarshibhowal.com">Rajarshi Bhowal</a>, and Nurdaulet Menglibayev.</p>
-   <p class="paper-links"><a href="/assets/files/BMM.pdf">Draft</a></p>
+  <p class="paper-meta">With <a href="https://www.rajarshibhowal.com">Rajarshi Bhowal</a> and Nurdaulet Menglibayev. Under review, 2026.</p>
+  <p class="paper-links"><a href="{{ '/assets/files/BMM.pdf' | relative_url }}">Draft</a></p>
 </div>
 
+<div class="paper" id="utility-maximizing-choice">
+  <p class="paper-title">Do Language Models Represent Utility-Maximizing Choice?</p>
+  <p class="paper-meta">Under review, 2026.</p>
+  <p class="paper-abstract">
+    Uses probes and activation-based tests to study decision-relevant
+    representations in language models and their relationship to observed
+    choices.
+  </p>
+</div>
 
+<div class="paper" id="ai-model-markets">
+  <p class="paper-title">Safety Screens and AI Product Introduction</p>
+  <p class="paper-meta">Working paper, October 2026.</p>
+  <p class="paper-abstract">
+    Estimates a recurring-release model using 5,593 developer-weeks for
+    76 developers. Compares timing-based and random safety assessment at
+    equal assessment volume.
+  </p>
+</div>
+
+</section>
+
+<section class="section">
+<h2>Research drafts</h2>
+
+<div class="paper" id="ai-capability-value">
+  <p class="paper-title">Demand for AI Models: Capability, Price, and Safety</p>
+  <p class="paper-meta">With Aryan Rudraraju and Daneal O’Habib. SPAR research draft, October 2026.</p>
+  <p class="paper-abstract">
+    Studies associations between price, capability, safety, and OpenRouter
+    usage across 164 models and 7,946 model-week observations. Part of my
+    SPAR fellowship on the economic value of AI capability gains, mentored
+    by Pavel Kocourek.
+  </p>
+</div>
+
+<div class="paper">
+  <p class="paper-title">When Do Predictions Save Measurements?</p>
+  <p class="paper-meta">Research draft, 2026.</p>
+  <p class="paper-abstract">
+    Compares prediction-assisted estimators in cash-transfer and
+    email-marketing data, examining measurement efficiency, calibration,
+    and confidence-interval coverage through repeated sampling and simulation.
+  </p>
+</div>
+
+</section>
+
+<section class="section">
+<h2>Research reports</h2>
+
+<div class="paper" id="detecting-collusion">
+  <p class="paper-title">Detecting Collusion Between AI Agents</p>
+  <p class="paper-meta">With Amit Balter, Chengxiao Wang, Fan Wu, and Michael Ball. Apart Research collusion sprint report, October 25, 2026.</p>
+  <p class="paper-abstract">
+    The team studied behavioral and conversational evidence of collusion
+    across 1,800 agent runs and 18,000 episodes, evaluating a rule-plus-LLM
+    classifier against 342 annotated episodes. My contribution was work on
+    the Python labeling pipeline using Modal.
+  </p>
+  <p class="paper-links"><a href="https://github.com/fw2274/detecting-collusion-btw-ai-agents">Repository</a></p>
+</div>
 
 </section>
 
 <section class="section">
 <h2>Works in progress</h2>
 
-<div class="paper" id="ai-model-markets">
-  <p class="paper-title">Competition, Adoption Dynamics, and Safety Evaluation in AI Model Markets</p>
+<div class="paper">
+  <p class="paper-title">Dynamic Competition and Frontier AI Model Release</p>
   <p class="paper-meta">Work in progress.</p>
-  <p class="paper-abstract">
-    Links OpenRouter usage and prices to public safety benchmarks to study
-    competition, adoption, and gaps in evaluation coverage. Examines what
-    these gaps imply for assessing changes in model use and prioritizing
-    further safety evaluations.
-  </p>
 </div>
 
 <div class="paper" id="sequential-treatment-decisions">
@@ -115,36 +160,29 @@ AI behavior and evaluation.
   <p class="paper-abstract">
     Studies when neural prediction can reduce the cost of deciding whether
     a treatment is worth adopting. Combines adjustment using earlier
-    experiments with valid sequential stopping rules, comparing performance
-    under limited budgets in simulations and public economic trial data.
-  </p>
-</div>
-
-<div class="paper" id="ai-capability-value">
-  <p class="paper-title">The Economic Value of AI Capability Gains</p>
-  <p class="paper-meta">SPAR fellowship project, Fall 2026. Mentored by Pavel Kocourek. Work in progress.</p>
-  <p class="paper-abstract">
-    Studies how improvements in AI capability translate into economic value
-    across tasks and sectors. Combines pricing and adoption evidence with
-    economic modeling to examine frontier-model premiums, open-weight
-    competition, and implications for safety investment.
+    experiments with valid sequential stopping rules under limited budgets.
   </p>
 </div>
 
 <div class="paper">
-  <p class="paper-title">Long Distance Relationships: Analyzing Hospital-Pharmacy Contracts</p>
-  <p class="paper-meta">With Maura Coughlin.</p>
+  <p class="paper-title">AI Agent Swarms and Collective Risk</p>
+  <p class="paper-meta">Work in progress.</p>
 </div>
 
 <div class="paper">
   <p class="paper-title">Who Matches with Whom: Mergers and Acquisitions in Health Systems</p>
+  <p class="paper-meta">Work in progress.</p>
 </div>
 
 <div class="paper">
   <p class="paper-title">Allocating Bundles: An Operations Research Framework</p>
-  <p class="paper-meta">With Jeremy Fox.</p>
+  <p class="paper-meta">With Jeremy Fox. Work in progress.</p>
 </div>
 
+<div class="paper">
+  <p class="paper-title">Long Distance Relationships: Analyzing Hospital-Pharmacy Contracts</p>
+  <p class="paper-meta">With Maura Coughlin. Work in progress.</p>
+</div>
 
 </section>
 

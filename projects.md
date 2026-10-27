@@ -16,10 +16,15 @@ things I build to learn.
 <section class="section">
 <h2>Research Projects</h2>
 
-<p class="paper-abstract">
-Research code and experiments will be added here as they are cleaned for
-public release.
-</p>
+<div class="paper">
+  <p class="paper-title">Detecting Collusion Between AI Agents</p>
+  <p class="paper-meta">With Amit Balter, Chengxiao Wang, Fan Wu, and Michael Ball. Apart Research collusion sprint report, October 2026.</p>
+  <p class="paper-abstract">
+    The team studied collusion in repeated interactions between AI agents.
+    I contributed to the Python labeling pipeline using Modal.
+  </p>
+  <p class="paper-links"><a href="https://github.com/fw2274/detecting-collusion-btw-ai-agents">Repository</a> <a href="{{ '/research/' | relative_url }}#detecting-collusion">Research summary</a></p>
+</div>
 
 </section>
 
@@ -48,12 +53,12 @@ are mostly ways for me to learn new tools by making something concrete.
 <div class="paper">
   <p class="paper-title">Spiderbot</p>
   <p class="paper-abstract">
-    A walking robot. Notes on the build and what broke are in the journal.
+    A walking robot I am building to learn about robotics.
   </p>
 </div>
 
 <div class="paper">
-  <p class="paper-title"><a href = "https://mishradibya.com/journal/2026/08/04/e_ink-pic-gen/">E-ink Storytelling with Stable Diffusion</a></p>
+  <p class="paper-title"><a href="{{ '/journal/2026/08/04/e_ink-pic-gen/' | relative_url }}">E-ink Storytelling with Stable Diffusion</a></p>
   <p class="paper-abstract">
     A repurposed e-ink reader that generates and displays images.
     Built with a 2 year old in mind. 

@@ -1,7 +1,7 @@
 # ===================================================================
 # Site settings — these are the ones you edit
 # ===================================================================
-title: Dibya Mishra
+title: Dibya Deepta Mishra
 tagline: "Economist studying decision-making, markets, and AI"
 description: >-
   I am an economist studying decision-making, incentives, and markets in
@@ -35,6 +35,16 @@ exclude:
   - Gemfile.lock
   - vendor
   - notes
+  - AGENTS.md
+  - README.md
+  - scripts
+  - tests
+  - tmp
+  - output
+  - '*.docx'
+  - '**/*.docx'
+  - cv_mishra.pdf
+  - '**/cv_mishra.pdf'
 
 defaults:
   - scope:

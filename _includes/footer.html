@@ -5,7 +5,8 @@
       <a href="https://github.com/{{ site.github }}"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub</a>
       <a href="https://www.linkedin.com/in/{{ site.linkedin }}"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>LinkedIn</a>
       {% if site.scholar != "" %}<a href="{{ site.scholar }}"><svg class="icon" aria-hidden="true"><use href="#i-scholar"></use></svg>Scholar</a>{% endif %}
-      <a href="{{ site.cv | relative_url }}"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>CV</a>
+      <a href="{{ site.resume | relative_url }}" aria-label="View tech resume PDF"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>Resume</a>
+      <a href="{{ site.cv | relative_url }}" aria-label="View academic CV PDF"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>CV</a>
     </div>
     <p class="disclaimer">
       Views expressed here are my own. &copy; {{ 'now' | date: "%Y" }} {{ site.title }}.
