@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,14 +145,14 @@
 
 <header class="mast">
   <div class="mast-top">
-    <a class="site-name" href="/">Dibya Mishra</a>
+    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <nav class="site-nav">
-      <a href="/">Home</a>
-      <a href="/research/" aria-current="page">Research</a>
-      <a href="/projects/">Projects</a>
-      <a href="/journal/">Journal</a>
-      <a href="/assets/files/resume.pdf">Resume</a>
-      <a href="/assets/files/cv.pdf">CV</a>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/research/' | relative_url }}" aria-current="page">Research</a>
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a href="{{ '/journal/' | relative_url }}">Journal</a>
+      <a href="{{ site.resume | relative_url }}" aria-label="View tech resume PDF">Resume</a>
+      <a href="{{ site.cv | relative_url }}" aria-label="View academic CV PDF">CV</a>
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme">
       <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 15.32A9.75 9.75 0 0 1 8.68 2.36a.75.75 0 0 0-.98-.95 10.75 10.75 0 1 0 14.9 14.9.75.75 0 0 0-.96-.99Z"/></svg>
       <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-14a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm0 16a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V20a1 1 0 0 1 1-1ZM3 12a1 1 0 0 1 1-1h1.5a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Zm15.5-1H20a1 1 0 1 1 0 2h-1.5a1 1 0 1 1 0-2ZM5.64 5.64a1 1 0 0 1 1.41 0l1.07 1.06A1 1 0 0 1 6.7 8.12L5.64 7.05a1 1 0 0 1 0-1.41Zm10.24 10.24a1 1 0 0 1 1.42 0l1.06 1.07a1 1 0 0 1-1.41 1.41l-1.07-1.06a1 1 0 0 1 0-1.42ZM18.36 5.64a1 1 0 0 1 0 1.41L17.3 8.12a1 1 0 1 1-1.42-1.42l1.07-1.06a1 1 0 0 1 1.41 0ZM8.12 15.88a1 1 0 0 1 0 1.42l-1.07 1.06a1 1 0 0 1-1.41-1.41l1.06-1.07a1 1 0 0 1 1.42 0Z"/></svg>
@@ -162,9 +165,9 @@
   <h1>Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India</h1>
   <p class="authors">Dibya Mishra · Ritika Sethi (Harris School of Public Policy, University of Chicago)</p>
   <div class="links">
-    <a href="/assets/files/RD_PMBJP.pdf">Paper (PDF)</a>
+    <a href="{{ '/assets/files/RD_PMBJP.pdf' | relative_url }}">Paper (PDF)</a>
     <a href="#maps">Maps</a>
-    <a href="/research/">All research</a>
+    <a href="{{ '/research/' | relative_url }}">All research</a>
   </div>
 </header>
 
