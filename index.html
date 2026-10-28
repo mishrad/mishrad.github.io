@@ -9,8 +9,7 @@ title: Home
     <div>
       <h1>Dibya Deepta Mishra</h1>
       <p class="hero-detail">
-        Economist studying decision-making, markets, and AI<br>
-        PhD in Economics, Rice University &middot; MS in Computer Science, Georgia Tech<br>
+        Economist studying markets, decision-making, and AI<br>
         Chicago, Illinois
       </p>
       <p class="linkrow">
@@ -18,8 +17,8 @@ title: Home
         <a href="https://www.linkedin.com/in/{{ site.linkedin }}"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>LinkedIn</a>
         <a href="https://github.com/{{ site.github }}"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub</a>
         {% if site.scholar != "" %}<a href="{{ site.scholar }}"><svg class="icon" aria-hidden="true"><use href="#i-scholar"></use></svg>Scholar</a>{% endif %}
+        <a href="{{ site.cv | relative_url }}" aria-label="View academic CV PDF"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>Academic CV</a>
         <a href="{{ site.resume | relative_url }}" aria-label="View tech resume PDF"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>Resume</a>
-        <a href="{{ site.cv | relative_url }}" aria-label="View academic CV PDF"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>CV</a>
       </p>
     </div>
     <img class="hero-portrait" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Dibya Deepta Mishra">
@@ -29,111 +28,40 @@ title: Home
     <h2>About</h2>
     <p>
       I am an economist with a PhD in Economics from Rice University and an
-      MS in Computer Science from Georgia Tech. My work combines industrial
+      MS in Computer Science from Georgia Tech. I combine industrial
       organization, econometrics, causal inference, and machine learning to
-      study hospital choice, pricing, and the economics of AI.
+      study healthcare markets, consumer choice, and the economics of AI.
     </p>
     <p>
-      I am currently a fellow in the Supervised Program for Alignment
-      Research (SPAR), estimating demand for AI models and willingness to pay
-      for capability and safety under the mentorship of Pavel Kocourek.
-    </p>
-    <p>
-      Previously, I was an Associate at Cornerstone Research (January
-      2025&ndash;September 2026), applying demand models and causal methods to
-      competition and litigation questions. At Amazon Retail Pricing
-      (May&ndash;August 2023), I combined product-text embeddings and gradient
-      boosting to reduce demand forecast RMSE by 5% relative to standard
-      logit models.
-    </p>
-    <p>
-      Earlier roles include research at the Indian School of Business and
-      Business and Regulatory Risk Research at HSBC. I work primarily in
-      Python, SQL, R, and Stata; my resume covers professional experience
-      and technical skills, and my CV includes teaching, awards, and service.
-    </p>
-    <p>
-      Explore my <a href="{{ '/research/' | relative_url }}">research</a>,
-      <a href="{{ '/research-agenda/' | relative_url }}">research agenda</a>,
-      <a href="{{ '/projects/' | relative_url }}">projects</a>, and
-      <a href="{{ '/journal/' | relative_url }}">journal</a>.
+      I am currently a research fellow in the Supervised Program for
+      Alignment Research (SPAR), studying demand for AI models with Pavel
+      Kocourek. Previously, I was an Associate at Cornerstone Research
+      (January 2025&ndash;September 2026) and an Economist Intern at Amazon
+      Retail Pricing.
     </p>
   </section>
 
-  <section class="section">
-    <h2>Research themes</h2>
-
-    <div class="paper">
-      <p class="paper-title">Decision-making &amp; representation</p>
-      <p class="paper-abstract">
-        Hospital consideration sets and tests of how language-model
-        representations relate to observed choices.
-      </p>
-    </div>
-
-    <div class="paper">
-      <p class="paper-title">Markets, incentives &amp; allocation</p>
-      <p class="paper-abstract">
-        Healthcare access, spectrum auctions, AI demand, and incentives
-        for safety assessment.
-      </p>
-    </div>
-
-    <div class="paper">
-      <p class="paper-title">Empirical &amp; computational methods</p>
-      <p class="paper-abstract">
-        Structural demand estimation, doubly robust policy evaluation, and
-        neural-network measures of hospital quality.
-      </p>
-    </div>
-
-  </section>
-
-  <section class="section">
-    <h2>Selected Research</h2>
-
-    <div class="paper">
-      <p class="paper-title">Quality Considerations and Universal Healthcare</p>
-      <p class="paper-meta">Working paper</p>
-      <p class="paper-abstract">
-        How patients form limited consideration sets over hospitals, and
-        whether information and empanelment incentives can expand them &mdash;
-        a structural model estimated on a large public insurance scheme in
-        India.
-      </p>
-      <p class="paper-links"><a href="{{ '/research/' | relative_url }}#quality-considerations">Read more</a></p>
-    </div>
-
-    <div class="paper">
-      <p class="paper-title">Pennies for Pads: Subsidized Menstrual Health Products and Adoption in India</p>
-      <p class="paper-meta">With Ritika Sethi. Under review.</p>
-      <p class="paper-abstract">
-        How price and availability shape adoption of a health product, using
-        the staggered rollout of subsidized pharmacies as a natural
-        experiment in access.
-      </p>
-      <p class="paper-links"><a href="{{ '/research/' | relative_url }}#pennies-for-pads">Read more</a></p>
-    </div>
-
-  </section>
-
-  <section class="section">
-    <p class="eyebrow">From the journal</p>
-    <h2>Alignment &times; Econ</h2>
-
-    <p class="paper-abstract" style="margin-bottom: 1.25rem;">
-      Essays connecting incentives, information, and contracts to the
-      monitoring and evaluation of AI systems.
-    </p>
-
-    <div class="paper">
-      <p class="paper-title"><a href="{{ '/journal/2026/09/02/alignment-econ1/' | relative_url }}">You Can't Reward What You Can't See</a></p>
-      <p class="paper-abstract">
-        What a classic 1979 economics paper can teach us about monitoring
-        and aligning modern AI systems.
-      </p>
-    </div>
-
+  <section class="section" id="updates">
+    <h2>Recent updates</h2>
+    <ul class="updates">
+      <li>
+        <time datetime="2026">2026</time>
+        <span>&ldquo;Beyond a Free Lunch&rdquo; received a revise and resubmit
+        at the Journal of Economic Behavior &amp; Organization.
+        <a href="{{ '/research/' | relative_url }}#beyond-a-free-lunch">Research details</a></span>
+      </li>
+      <li>
+        <time datetime="2026-10-25">Oct 2026</time>
+        <span>Coauthored &ldquo;Detecting Collusion Between AI Agents&rdquo;
+        for the Apart Research collusion sprint.
+        <a href="{{ '/journal/2026/10/25/detecting-collusion/' | relative_url }}">Sprint notes</a></span>
+      </li>
+      <li>
+        <time datetime="2026-09">Sep 2026</time>
+        <span>Joined SPAR as a research fellow, one of 800 selected from
+        6,000 applicants.</span>
+      </li>
+    </ul>
   </section>
 
 </main>

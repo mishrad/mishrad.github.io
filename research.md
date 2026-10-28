@@ -69,7 +69,7 @@ The full record of teaching, awards, service, and conferences is in my CV.
   <p class="paper-links"><a href="{{ '/assets/files/RD_PMBJP.pdf' | relative_url }}">Draft</a> <a href="{{ '/pmbjp/' | relative_url }}">Interactive app</a></p>
 </div>
 
-<div class="paper">
+<div class="paper" id="beyond-a-free-lunch">
   <p class="paper-title">Beyond a Free Lunch: Unintended Consequences of an Out-of-School Nutrition Program on Adolescent Girls' School Enrollment and Health Outcomes</p>
   <p class="paper-meta">With Tanmay Devi, <a href="https://www.ajinkyakeskar.com">Ajinkya Keskar</a>, and <a href="https://ritikasethi.com/">Ritika Sethi</a>. Revise and resubmit, Journal of Economic Behavior &amp; Organization, 2026.</p>
   <p class="paper-links"><a href="https://www.ajinkyakeskar.com/files/SABLA_draft.pdf">Draft</a></p>
