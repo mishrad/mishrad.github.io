@@ -21,7 +21,19 @@ The full record of teaching, awards, service, and conferences is in my CV.
 </p>
 
 <section class="section">
-<h2>Publications</h2>
+<h2>Publications &amp; accepted papers</h2>
+
+<div class="paper" id="utility-maximizing-choice">
+  <p class="paper-title">Decodable but Unused: What Language Models Represent (and Ignore) When Choosing Between Two Options</p>
+  <p class="paper-meta">Dibya Deepta Mishra. Australasian Language Technology Association Workshop (ALTA), 2026. Accepted.</p>
+  <p class="paper-abstract">
+    Using controlled insurance and coffee-choice tasks, I study whether
+    language models use decision-relevant information encoded in their
+    hidden states. Probes can recover the utility-maximising option even
+    when the tested models’ choices remain near chance, highlighting a gap
+    between decodable information and behaviour.
+  </p>
+</div>
 
 <div class="paper">
   <p class="paper-title">Local Population Characteristics and Access Equity of 340B Contract Pharmacies</p>
@@ -79,16 +91,6 @@ The full record of teaching, awards, service, and conferences is in my CV.
   <p class="paper-title">Spectrum Allocation to Public Operators: A Structural Analysis of Set-Asides versus Subsidies in Indian Telecom Auctions</p>
   <p class="paper-meta">With <a href="https://www.rajarshibhowal.com">Rajarshi Bhowal</a> and Nurdaulet Menglibayev. Under review, 2026.</p>
   <p class="paper-links"><a href="{{ '/assets/files/BMM.pdf' | relative_url }}">Draft</a></p>
-</div>
-
-<div class="paper" id="utility-maximizing-choice">
-  <p class="paper-title">Do Language Models Represent Utility-Maximizing Choice?</p>
-  <p class="paper-meta">Under review, 2026.</p>
-  <p class="paper-abstract">
-    Uses probes and activation-based tests to study decision-relevant
-    representations in language models and their relationship to observed
-    choices.
-  </p>
 </div>
 
 <div class="paper" id="ai-model-markets">
