@@ -33,6 +33,7 @@ The full record of teaching, awards, service, and conferences is in my CV.
     when the tested models’ choices remain near chance, highlighting a gap
     between decodable information and behaviour.
   </p>
+  <p class="paper-links"><a href="{{ '/assets/files/decodable-but-unused.pdf' | relative_url }}" aria-label="View Decodable but Unused draft PDF">Draft</a></p>
 </div>
 
 <div class="paper">
