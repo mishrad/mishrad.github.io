@@ -275,6 +275,8 @@ img { max-width: 100%; height: auto; }
 
 .hero h1 { margin-bottom: 0.4rem; }
 
+.hero .eyebrow { margin-bottom: 0.9rem; }
+
 .hero-affil {
   font-family: var(--mono);
   font-size: 0.78rem;
@@ -378,6 +380,11 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ---------- Research entries ---------- */
+
+.work-preview h3 { margin: 0 0 0.4rem; }
+.work-preview h3 a { text-decoration: none; }
+.work-preview h3 a:hover { text-decoration: underline; }
+.work-preview .paper-links { margin: 0.9rem 0 0; }
 
 .paper {
   padding: 1.1rem 0;
@@ -527,6 +534,19 @@ img { max-width: 100%; height: auto; }
 }
 .linkrow a:hover { text-decoration: underline; }
 .linkrow .icon { vertical-align: 0; }
+
+.primary-links { margin-bottom: 1.25rem; }
+.primary-links a {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--paper-2);
+}
+.primary-links a:first-child {
+  background: var(--accent);
+  color: var(--paper);
+}
+.primary-links a:hover { text-decoration: underline; }
 
 .fields {
   font-size: 1rem;

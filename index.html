@@ -1,44 +1,111 @@
 ---
 layout: default
 title: Home
+description: "Economist using economic models, causal inference, and machine learning to study demand, interventions, and incentives."
 ---
 
 <main class="wrap">
 
   <section class="hero">
     <div>
-      <h1>Dibya Deepta Mishra</h1>
+      <p class="eyebrow">Dibya Deepta Mishra &middot; Chicago</p>
+      <h1>Economist working on markets, decisions, and AI</h1>
       <p class="hero-detail">
-        Economist studying markets, decision-making, and AI<br>
-        Chicago, Illinois
+        I use economic models, causal inference, and machine learning to
+        understand demand, evaluate interventions, and study incentives.
+        My experience includes pricing research at Amazon, economic
+        consulting at Cornerstone Research, and research on AI decision-making.
+      </p>
+      <p class="hero-affil">PhD in Economics, Rice University &middot; MS in Computer Science, Georgia Tech</p>
+      <p class="linkrow primary-links">
+        <a href="#selected-work">Selected Work</a>
+        <a href="{{ site.resume | relative_url }}" aria-label="View tech resume PDF">Resume</a>
+        <a href="{{ site.cv | relative_url }}" aria-label="View academic CV PDF">Academic CV</a>
       </p>
       <p class="linkrow">
         <a href="mailto:{{ site.email }}"><svg class="icon" aria-hidden="true"><use href="#i-email"></use></svg>Email</a>
         <a href="https://www.linkedin.com/in/{{ site.linkedin }}"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>LinkedIn</a>
         <a href="https://github.com/{{ site.github }}"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub</a>
         {% if site.scholar != "" %}<a href="{{ site.scholar }}"><svg class="icon" aria-hidden="true"><use href="#i-scholar"></use></svg>Scholar</a>{% endif %}
-        <a href="{{ site.cv | relative_url }}" aria-label="View academic CV PDF"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>Academic CV</a>
-        <a href="{{ site.resume | relative_url }}" aria-label="View tech resume PDF"><svg class="icon" aria-hidden="true"><use href="#i-doc"></use></svg>Resume</a>
       </p>
     </div>
     <img class="hero-portrait" src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Dibya Deepta Mishra">
   </section>
 
-  <section class="section">
-    <h2>About</h2>
-    <p>
-      I am an economist with a PhD in Economics from Rice University and an
-      MS in Computer Science from Georgia Tech. I combine industrial
-      organization, econometrics, causal inference, and machine learning to
-      study healthcare markets, consumer choice, and the economics of AI.
-    </p>
-    <p>
-      I am currently a research fellow in the Supervised Program for
-      Alignment Research (SPAR), studying demand for AI models with Pavel
-      Kocourek. Previously, I was an Associate at Cornerstone Research
-      (January 2025&ndash;September 2026) and an Economist Intern at Amazon
-      Retail Pricing.
-    </p>
+  <section class="section" id="selected-work">
+    <h2>Selected work</h2>
+
+    <article class="paper work-preview">
+      <h3><a href="{{ '/work/' | relative_url }}#pricing">Demand modeling for pricing decisions</a></h3>
+      <p class="paper-meta">Amazon Retail Pricing &middot; Economist Intern</p>
+      <p class="paper-abstract">
+        How should a retailer evaluate discounts and bundle prices? I combined
+        product-text embeddings and gradient boosting with demand modeling,
+        reducing forecast RMSE by 5% relative to standard logit models.
+        I presented pricing recommendations to inform future A/B tests.
+      </p>
+      <p class="paper-links"><a href="{{ '/work/' | relative_url }}#pricing">Work summary</a></p>
+    </article>
+
+    <article class="paper work-preview">
+      <h3><a href="{{ '/work/' | relative_url }}#policy-allocation">Measuring policy effects and informing allocation</a></h3>
+      <p class="paper-meta">Pennies for Pads &middot; With Ritika Sethi &middot; Under review</p>
+      <p class="paper-abstract">
+        Do subsidized menstrual products increase adoption? We use doubly
+        robust difference-in-differences to estimate a 9.6 percentage-point
+        increase in pad use. The interactive pharmacy planner illustrates
+        efficiency and equity tradeoffs in choosing locations.
+      </p>
+      <p class="paper-links"><a href="{{ '/pmbjp/' | relative_url }}">Interactive planner</a> <a href="{{ '/assets/files/RD_PMBJP.pdf' | relative_url }}">Paper</a> <a href="{{ '/work/' | relative_url }}#policy-allocation">Work summary</a></p>
+    </article>
+
+    <article class="paper work-preview">
+      <h3><a href="{{ '/work/' | relative_url }}#ai-decisions">Understanding and evaluating AI decisions</a></h3>
+      <p class="paper-meta">Decodable but Unused &middot; Accepted at ALTA 2026</p>
+      <p class="paper-abstract">
+        Can a model encode the better option without choosing it? I use
+        hidden-state probes and activation tests to study the gap between
+        information represented inside language models and their choices.
+      </p>
+      <p class="paper-abstract">
+        In a separate Apart Research sprint report on agent collusion,
+        I contributed to experiment design, Python labeling using Modal,
+        and writing.
+      </p>
+      <p class="paper-links"><a href="{{ '/assets/files/decodable-but-unused.pdf' | relative_url }}">ALTA draft</a> <a href="{{ '/work/' | relative_url }}#agent-collusion">Collusion sprint</a> <a href="https://github.com/fw2274/detecting-collusion-btw-ai-agents">Sprint code</a></p>
+    </article>
+  </section>
+
+  <section class="section" id="experience">
+    <h2>Professional experience</h2>
+    <div class="paper">
+      <h3 class="paper-title">Cornerstone Research &middot; Associate</h3>
+      <p class="paper-meta">January 2025&ndash;September 2026</p>
+      <p class="paper-abstract">Estimated demand and causal price effects in competition and litigation work, and managed 2&ndash;3 analysts through code review and reproducible analysis.</p>
+    </div>
+    <div class="paper">
+      <h3 class="paper-title">Amazon Retail Pricing &middot; Economist Intern</h3>
+      <p class="paper-meta">May&ndash;August 2023</p>
+      <p class="paper-abstract">Combined demand modeling and machine learning to forecast product demand and evaluate discounts and bundle prices.</p>
+    </div>
+    <div class="paper">
+      <h3 class="paper-title">SPAR &middot; Research Fellow</h3>
+      <p class="paper-meta">September 2026&ndash;present</p>
+      <p class="paper-abstract">Ongoing discrete-choice demand research on willingness to pay for AI capability and safety, and the economic value of capability gains.</p>
+    </div>
+  </section>
+
+  <section class="section" id="selected-publications">
+    <h2>Selected publications</h2>
+    <div class="paper">
+      <p class="paper-title"><a href="{{ '/assets/files/340b_HA1.pdf' | relative_url }}">Local Population Characteristics and Access Equity of 340B Contract Pharmacies</a></p>
+      <p class="paper-meta">With Maura Coughlin. Health Affairs Scholar, 2025.</p>
+    </div>
+    <div class="paper">
+      <p class="paper-title"><a href="https://link.springer.com/chapter/10.1007/978-3-031-92699-0_6">The Wizard of OZ (Opportunity Zones): Spatial Spillovers in Place-Based Programs</a></p>
+      <p class="paper-meta">With Robin C. Sickles and Yanfei Sun. Springer, 2025.</p>
+    </div>
+    <p class="paper-links"><a href="{{ '/research/' | relative_url }}">Full research record</a></p>
   </section>
 
   <section class="section" id="updates">

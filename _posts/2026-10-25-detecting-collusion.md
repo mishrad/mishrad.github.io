@@ -2,7 +2,7 @@
 title: "Detecting Collusion Between AI Agents"
 date: 2026-10-25
 category: hackathons
-summary: "An Apart Research sprint on collusion between AI agents, with work on the Python labeling pipeline using Modal."
+summary: "An Apart Research sprint on collusion between AI agents, with contributions to experiment design, Python labeling using Modal, and writing."
 ---
 
 For the October 2026 Apart Research collusion sprint, I coauthored
@@ -14,6 +14,7 @@ across 1,800 agent runs and 18,000 episodes. The report evaluates a
 rule-plus-LLM classifier against 342 annotated episodes and examines
 collusion intensity, onset, and reciprocity.
 
-My contribution was work on the Python labeling pipeline using Modal.
+I contributed to experiment design, the Python labeling pipeline using
+Modal, and writing.
 
 [Project repository](https://github.com/fw2274/detecting-collusion-btw-ai-agents)

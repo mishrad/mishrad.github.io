@@ -28,7 +28,7 @@ Projects, research tools, and things I build to learn.
 
 </section>
 
-<section class="section">
+<section class="section" id="personal-projects">
 <h2>Things I Build</h2>
 
 <p class="paper-abstract">

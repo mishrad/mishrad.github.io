@@ -2,11 +2,11 @@
   <div class="wrap-wide header-inner">
     <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <nav class="site-nav">
-      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/work/' | relative_url }}"{% if page.url == '/work/' %} aria-current="page"{% endif %}>Work</a>
       <a href="{{ '/research/' | relative_url }}"{% if page.url == '/research/' %} aria-current="page"{% endif %}>Research</a>
       <a href="{{ '/journal/' | relative_url }}"{% if page.url contains '/journal' %} aria-current="page"{% endif %}>Journal</a>
       <a href="{{ site.resume | relative_url }}" aria-label="View tech resume PDF">Resume</a>
-      <a href="{{ '/other/' | relative_url }}"{% if page.url == '/other/' %} aria-current="page"{% endif %}>Other</a>
+      <a href="{{ site.cv | relative_url }}" aria-label="View academic CV PDF">Academic CV</a>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme">
         <svg class="icon theme-icon-moon" aria-hidden="true"><use href="#i-moon"></use></svg>
         <svg class="icon theme-icon-sun" aria-hidden="true"><use href="#i-sun"></use></svg>

@@ -2,11 +2,11 @@
 # Site settings — these are the ones you edit
 # ===================================================================
 title: Dibya Deepta Mishra
-tagline: "Economist studying decision-making, markets, and AI"
+tagline: "Economist working on markets, decisions, and AI"
 description: >-
-  I am an economist studying decision-making, incentives, and markets in
-  human and AI systems, using econometrics, causal inference, and machine
-  learning.
+  I use economic models, causal inference, and machine learning to study
+  demand, evaluate interventions, and understand incentives, with work on
+  pricing, policy, and AI decisions.
 
 url: "https://mishradibya.com"
 baseurl: ""

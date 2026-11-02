@@ -94,16 +94,6 @@ The full record of teaching, awards, service, and conferences is in my CV.
   <p class="paper-links"><a href="{{ '/assets/files/BMM.pdf' | relative_url }}">Draft</a></p>
 </div>
 
-<div class="paper" id="ai-model-markets">
-  <p class="paper-title">Safety Screens and AI Product Introduction</p>
-  <p class="paper-meta">Working paper, October 2026.</p>
-  <p class="paper-abstract">
-    Estimates a recurring-release model using 5,593 developer-weeks for
-    76 developers. Compares timing-based and random safety assessment at
-    equal assessment volume.
-  </p>
-</div>
-
 </section>
 
 <section class="section">
@@ -131,8 +121,8 @@ The full record of teaching, awards, service, and conferences is in my CV.
   <p class="paper-abstract">
     The team studied behavioral and conversational evidence of collusion
     across 1,800 agent runs and 18,000 episodes, evaluating a rule-plus-LLM
-    classifier against 342 annotated episodes. My contribution was work on
-    the Python labeling pipeline using Modal.
+    classifier against 342 annotated episodes. I contributed to experiment
+    design, the Python labeling pipeline using Modal, and writing.
   </p>
   <p class="paper-links"><a href="https://github.com/fw2274/detecting-collusion-btw-ai-agents">Repository</a></p>
 </div>
@@ -141,6 +131,16 @@ The full record of teaching, awards, service, and conferences is in my CV.
 
 <section class="section">
 <h2>Works in progress</h2>
+
+<div class="paper" id="ai-model-markets">
+  <p class="paper-title">Safety Screens and AI Product Introduction</p>
+  <p class="paper-meta">Work in progress.</p>
+  <p class="paper-abstract">
+    Ongoing research on how safety assessments interact with AI model
+    release decisions, including timing-based and random assessment
+    approaches.
+  </p>
+</div>
 
 <div class="paper">
   <p class="paper-title">Dynamic Competition and Frontier AI Model Release</p>
