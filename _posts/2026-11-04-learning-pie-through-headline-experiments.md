@@ -5,7 +5,7 @@ category: paper-replications
 summary: "Working through PIE with Upworthy experiments, and testing whether headline embeddings help predict click lift."
 ---
 
-*Paper replication notes.* [Code on GitHub](https://github.com/dibyadeeptamishra/pie-headlines)
+*Paper replication notes.* [Code on GitHub](https://github.com/mishrad/pie-headlines)
 
 [PIE, by Brett Gordon, Robert Moakler and Florian Zettelmeyer](https://doi.org/10.3386/w35044) is a nice combination of econ, marketing, and CS. Specifically, it looks at at a problem advertisers deal with - did an ad change someone's behavior? It is not ex-ante clear. Somebody who saw an ad and bought the product might have bought it anyway. This is particularly difficult to untangle when ads target people more likely to buy. While experiments can be very helpful here, running one for every campaign is costly.
 
