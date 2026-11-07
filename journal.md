@@ -26,11 +26,11 @@ Notes on economics, AI, and things I am working through.
 </section>
 
 <section class="section">
-<h2 id="paper-replications">Paper replications</h2>
+<h2 id="thoughts-on-papers">Thoughts on papers</h2>
 
 <ul class="post-list">
 {% for post in site.posts %}
-  {% if post.categories contains 'paper-replications' %}
+  {% if post.categories contains 'thoughts-on-papers' %}
   <li>
     <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
@@ -66,7 +66,7 @@ Notes on economics, AI, and things I am working through.
 {% for post in site.posts %}
   {% unless post.url contains 'alignment-econ1' %}
   {% unless post.categories contains 'hackathons' %}
-  {% unless post.categories contains 'paper-replications' %}
+  {% unless post.categories contains 'thoughts-on-papers' %}
   <li>
     <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
