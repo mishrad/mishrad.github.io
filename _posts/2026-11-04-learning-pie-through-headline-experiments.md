@@ -2,40 +2,42 @@
 title: "Learning PIE Through Headline Experiments"
 date: 2026-11-04
 category: thoughts-on-papers
-summary: "Working through PIE with Upworthy experiments, and testing whether headline embeddings help predict click lift."
+summary: "Working through PIE with Upworthy experiments to see whether headline wording helps predict differences in click-through rates."
 ---
 
 [Code on GitHub](https://github.com/mishrad/pie-headlines)
 
-[PIE, by Brett Gordon, Robert Moakler and Florian Zettelmeyer](https://doi.org/10.3386/w35044) is a nice combination of econ, marketing, and CS. Specifically, it looks at at a problem advertisers deal with - did an ad change someone's behavior? It is not ex-ante clear. Somebody who saw an ad and bought the product might have bought it anyway. This is particularly difficult to untangle when ads target people more likely to buy. While experiments can be very helpful here, running one for every campaign is costly.
+[Predicted Incrementality by Experimentation (PIE)](https://doi.org/10.3386/w35044), by Brett Gordon, Robert Moakler, and Florian Zettelmeyer, is a nice combination of economics, marketing, and computer science. It starts with a question advertisers face: did the ad change anyone’s behavior? Someone who saw an ad and bought the product might have bought it anyway. *Incrementality* is the extra behavior the ad caused, such as purchases that would not have happened without it. This is hard to untangle when ads target people who are already more likely to buy. Randomized experiments can help, but running one for every campaign is costly.
 
-The authors ask a simple question- Can we reuse the experiments we have already run to learn about campaigns we want to run. They use experimental results to learn a relationship between campaign characteristics and incremental effects, then use that relationship to make predictions for other campaigns.
+The authors ask a simple question: can we learn from the experiments we already ran to estimate effects for campaigns where we didn’t run one? They use randomized experiments to learn how campaign characteristics relate to the effects the ads caused. They then use that relationship to estimate effects for other campaigns, using information that can include metrics collected after a campaign ends.
 
-I have previously worked with language-model embeddings for my research as well as an intern at Amazon, so this made me curious about whether information in the creative itself could add something to that approach. Could the wording of an ad, or eventually its text and images together, help predict its effect? I wanted to try a small exercise to work through that question before commiting to a research project. 
+I’ve worked with language model embeddings in my research and as an intern at Amazon. An embedding is a list of numbers a model uses to represent text. That made me curious about the ad *creative*, meaning the words and images people see. Could the wording of an ad, or eventually its text and images together, help predict its effect? I wanted to try a small exercise before committing to a larger research project.
 
-I found some nice public data in Upworthy's headline experiments. Given two headlines for the same article, could their wording help predict the difference in click-through rates? While, that is a different outcome from advertising incrementality,I want to understand the paper better and explore an ingredient that might be useful in a broader extension.
+I found some useful public data in Upworthy’s headline experiments. Given two headlines for the same article, could their wording help predict the difference in click-through rates? I used the headline data to explore that idea. A change in headline clicks measures something different from the extra purchases or other actions an ad campaign causes.
 
 ## Building the sample
 
-The [exploratory file](https://osf.io/download/3vqmp/) contains 4,873 experiments. I excluded any experiment with a variant dated between June 25, 2013 and January 10, 2014, following the [archive authors&#39; warning](https://upworthy.natematias.com/2024-06-upworthy-archive-update.html) about possible randomization problems during that period.
+The [exploratory file](https://osf.io/download/3vqmp/) contains 4,873 experiments. I excluded any experiment with a variant (a version shown to readers) dated between June 25, 2013 and January 10, 2014, following the [archive authors&#39; warning](https://upworthy.natematias.com/2024-06-upworthy-archive-update.html) about possible randomization problems during that period.
 
-Within each experiment, I looked for distinct headlines with the same image ID and excerpt. I then used a deterministic hash to choose one pair per experiment. I made sure that the outcomes - Clicks, impressions and the recorded winner had no role in choosing the pair which left me with ~1900 observations.
+Within each experiment, I looked for distinct headlines with the same image and article excerpt. I chose one pair per experiment using a rule based on a deterministic hash. Running the rule again on the same data gives the same pair. The rule did not use clicks, impressions (how many times a headline was shown), or the recorded winner. That left me with about 1,900 pairs.
 
-I called the headlines A and B according to their order, without using which one won. The outcome I wanted to predict was:
+I called the headlines A and B according to their order, without using which one won. The click-through rate (CTR) is clicks divided by impressions. With the rates written as fractions, the difference I wanted to predict was:
 
 `100 × (CTR(B) − CTR(A))`
 
-Suppose A gets a 3% click-through rate and B gets 3.4%. The observed lift is 0.4 percentage points. Random assignment supports interpreting the difference as an experimental effect but the model does not tell us the causal effect of an individual word.
+Suppose A gets a 3% click-through rate and B gets 3.4%. The observed lift is 0.4 percentage points. Randomly assigning which headline people see helps us interpret the difference as an effect of showing one headline instead of the other. The model does not tell us the causal effect of any individual word.
 
-Splitting the data also needed some care. Different experiments can contain the same headline or article. If related content appears in both training and testing, a model might look better than it actually is. 
+Splitting the data also needed some care. Different experiments can contain the same headline or article. If related content appears in both training and testing, a model might get credit for predicting something it has effectively already seen. This is called *content leakage*.
 
-I linked experiments that shared normalized headlines or article slugs, checking all their cleaned variants, and kept each connected group in the same split. That produced 1,172 training experiments, 397 for validation and 361 for testing. These links reduce content leakage, although they cannot catch every related article. All three splits come from the public exploratory file.
+I linked experiments that shared a headline after basic text cleanup or had the same article identifier in their URLs. I checked all the cleaned versions in each experiment and kept each group of linked experiments together. That gave me 1,172 experiments to fit the models (training), 397 to compare models before the final check (validation), and 361 set aside for that final check (testing). Grouping reduces leakage, although it cannot catch every related article. All three sets come from the public exploratory file.
 
 ## What I fitted
 
-I compared TF-IDF with frozen MiniLM embeddings. TF-IDF represents words and two-word combinations, with the vocabulary and weights fitted only on the training headlines. The embedding model, [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), represents each headline as a normalized vector of 384 numbers. I used it without fine-tuning (would not suggest for actual work).
+I compared two ways to represent each headline. TF-IDF (term frequency–inverse document frequency) counts words and two-word combinations, giving less weight to terms that are common across headlines. I used only the training headlines to choose the vocabulary and calculate the weights. The other method, [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), turns the whole headline into an embedding of 384 numbers, scaled so every embedding has the same length. I kept MiniLM frozen, meaning I used it as it came and trained a separate model to predict lift.
 
-In both cases, I subtracted A's features from B's and fitted ridge regression without an intercept. This gives the prediction a useful property: switching the two headlines reverses the predicted lift. During validation, I found MiniLM to have the lower error. I then evaluated the original training fits on the test set, without refitting them on the combined training and validation data.
+In both cases, I subtracted A’s features from B’s and fitted a ridge regression, a linear model that discourages large weights. I left out the intercept, the fixed amount a model would otherwise add to each prediction. That way, switching A and B reverses the predicted lift.
+
+MiniLM had the lower error on the validation set. I then evaluated both models on the test set using the original training fits, without retraining on the validation data. The table also shows two simple benchmarks: always predict zero lift, or always predict the average lift from the training set. RMSE (root mean squared error) measures prediction error in percentage points and gives larger mistakes more weight. Lower is better.
 
 | Model             | Test RMSE, percentage points |
 | ----------------- | ---------------------------: |
@@ -44,19 +46,19 @@ In both cases, I subtracted A's features from B's and fitted ridge regression wi
 | TF-IDF plus ridge |                       0.5635 |
 | MiniLM plus ridge |             **0.5447** |
 
-MiniLM reduced prediction error relative to TF-IDF by 0.01878 percentage points, or **3.33%**. Across 2,000 paired bootstrap resamples of the test set's 331 content groups, the approximate 95% interval for the relative reduction was **1.35% to 5.41%**.
+MiniLM reduced prediction error relative to TF-IDF by 0.01878 percentage points, or **3.33%**. That is a reduction in error, not an increase in clicks. To see how sensitive the comparison was to which groups were in the test set, I used a *paired bootstrap*. I drew 2,000 resamples from the 331 test content groups, allowing a group to be drawn more than once. I compared both models on the same groups in each resample. The approximate 95% interval for the relative reduction was **1.35% to 5.41%**.
 
-While this was a modest improvement, it was a useful pilot to give me confidence that we could do something more with it. However, there are limits to what this comparison tells us. The labels are noisy experimental estimates. The bootstrap holds the fitted models fixed, so it leaves out uncertainty from retraining them. 
+The improvement was modest, but it made me want to try the comparison on more data. The observed click gaps can fluctuate because each experiment has a finite number of views. And because the bootstrap holds the fitted models fixed, the interval doesn’t capture how the comparison might change if I retrained the models.
 
-I used Spark on one EC2 machine for preparation and a SageMaker notebook on CPU for modeling, moving files through uploads and downloads. I did this so that when I run this experiment on larger data, I am prepared. 
+I prepared the data with Spark on one AWS virtual machine (EC2) and trained the models in a SageMaker notebook using a CPU. I moved the files between the two by uploading and downloading them. Part of the exercise was to get familiar with that setup before trying it on more data.
 
 ## What I want to try next
 
-I am still unsure how the comparison would behave with a larger and more varied dataset. My next step is to evaluate the frozen models on more Upworthy experiments, removing related-content overlap first. I am also thinking about more datasets so feel free to suggest on my email. 
+I am still unsure how the comparison would behave with a larger and more varied dataset. My next step is to evaluate the models as they are on more Upworthy experiments, after removing examples that overlap with content I’ve already used. If you know of other datasets, feel free to email me.
 
-The question that brings me back to PIE is whether creative features add useful information beyond the campaign metrics already available. Do the words and images in an ad tell us something about its incremental effect? My earlier experience with embeddings makes me interested in testing that, first with creative text and then with multimodal inputs that combine text and images.
+The question that brings me back to PIE is whether the ad itself adds useful information beyond the campaign metrics already available. Do the words and images help predict what the ad caused? I’d like to test that with the text first and then with text and images together.
 
-Embeddings improved prediction of observed headline click lift in this held-out sample. Whether that carries over to larger datasets and advertising creative is something I would like to find out.
+Embeddings improved predictions of the observed gap in click-through rates on the test set. Whether that carries over to larger datasets and ads is something I’d like to find out.
 
 ---
 
