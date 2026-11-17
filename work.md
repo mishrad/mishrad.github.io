@@ -48,11 +48,11 @@ full academic record.
 <section class="section" id="ai-decisions">
 <h2>Understanding and evaluating AI decisions</h2>
 <p class="paper-title">Decodable but Unused: What Language Models Represent (and Ignore) When Choosing Between Two Options</p>
-<p class="paper-meta">Dibya Deepta Mishra &middot; Accepted, ALTA 2026</p>
+<p class="paper-meta">Dibya Deepta Mishra &middot; Working paper, 2026</p>
 <p><strong>Question.</strong> Does information that can be recovered from a language model's hidden states actually affect its choices?</p>
 <p><strong>My contribution.</strong> I designed controlled insurance and coffee-choice tasks and used probes and activation-based tests to examine decision-relevant representations.</p>
 <p><strong>Data and methods.</strong> Two-option choice prompts with experimenter-defined preferences, hidden-state probes, control tasks, and activation interventions.</p>
-<p><strong>Finding and status.</strong> Probes can recover the utility-maximising option even when the tested models' choices remain near chance. The paper is accepted for archival publication at the Australasian Language Technology Association Workshop (ALTA), 2026.</p>
+<p><strong>Finding.</strong> Probes can recover the utility-maximising option even when the tested models' choices remain near chance.</p>
 <p><strong>Practical relevance.</strong> A recoverable signal alone is insufficient evidence that a model uses that information when making a decision. Evaluation needs to examine behavior as well as representations.</p>
 <p class="paper-links"><a href="{{ '/assets/files/decodable-but-unused.pdf' | relative_url }}" aria-label="View Decodable but Unused draft PDF">Draft</a> <a href="{{ '/research/' | relative_url }}#utility-maximizing-choice">Research entry</a></p>
 </section>
@@ -63,7 +63,7 @@ full academic record.
 <p><strong>Question.</strong> How can evaluators identify collusion when AI agents interact repeatedly and review each other's work?</p>
 <p><strong>My contribution.</strong> I contributed to experiment design, the Python labeling pipeline using Modal, and writing.</p>
 <p><strong>Data and methods.</strong> The team studied behavioral and conversational evidence across 1,800 agent runs and 18,000 episodes, evaluating a rule-plus-LLM classifier against 342 annotated episodes.</p>
-<p><strong>Result and status.</strong> The coauthored sprint report examines collusion intensity, onset, and reciprocity. It is a separate project from the ALTA paper.</p>
+<p><strong>Result and status.</strong> The coauthored sprint report examines collusion intensity, onset, and reciprocity.</p>
 <p><strong>Practical relevance.</strong> The analysis helps examine how evidence from agents' conversations compares with evidence from their behavior in repeated interactions.</p>
 <p class="paper-links"><a href="https://github.com/fw2274/detecting-collusion-btw-ai-agents">Code &amp; project documentation</a> <a href="{{ '/journal/2026/10/25/detecting-collusion/' | relative_url }}">Sprint notes</a> <a href="{{ '/research/' | relative_url }}#detecting-collusion">Research entry</a></p>
 </section>

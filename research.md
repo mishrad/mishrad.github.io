@@ -21,20 +21,7 @@ The full record of teaching, awards, service, and conferences is in my CV.
 </p>
 
 <section class="section">
-<h2>Publications &amp; accepted papers</h2>
-
-<div class="paper" id="utility-maximizing-choice">
-  <p class="paper-title">Decodable but Unused: What Language Models Represent (and Ignore) When Choosing Between Two Options</p>
-  <p class="paper-meta">Dibya Deepta Mishra. Australasian Language Technology Association Workshop (ALTA), 2026. Accepted.</p>
-  <p class="paper-abstract">
-    Using controlled insurance and coffee-choice tasks, I study whether
-    language models use decision-relevant information encoded in their
-    hidden states. Probes can recover the utility-maximising option even
-    when the tested models’ choices remain near chance, highlighting a gap
-    between decodable information and behaviour.
-  </p>
-  <p class="paper-links"><a href="{{ '/assets/files/decodable-but-unused.pdf' | relative_url }}" aria-label="View Decodable but Unused draft PDF">Draft</a></p>
-</div>
+<h2>Publications</h2>
 
 <div class="paper">
   <p class="paper-title">Local Population Characteristics and Access Equity of 340B Contract Pharmacies</p>
@@ -58,6 +45,19 @@ The full record of teaching, awards, service, and conferences is in my CV.
 
 <section class="section">
 <h2>Working papers &amp; manuscripts</h2>
+
+<div class="paper" id="utility-maximizing-choice">
+  <p class="paper-title">Decodable but Unused: What Language Models Represent (and Ignore) When Choosing Between Two Options</p>
+  <p class="paper-meta">Dibya Deepta Mishra &middot; Working paper, 2026</p>
+  <p class="paper-abstract">
+    Using controlled insurance and coffee-choice tasks, I study whether
+    language models use decision-relevant information encoded in their
+    hidden states. Probes can recover the utility-maximising option even
+    when the tested models’ choices remain near chance, highlighting a gap
+    between decodable information and behaviour.
+  </p>
+  <p class="paper-links"><a href="{{ '/assets/files/decodable-but-unused.pdf' | relative_url }}" aria-label="View Decodable but Unused draft PDF">Draft</a></p>
+</div>
 
 <div class="paper" id="quality-considerations">
   <p class="paper-title">Quality Considerations and Universal Healthcare</p>
