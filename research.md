@@ -60,13 +60,14 @@ The full record of teaching, awards, service, and conferences is in my CV.
 </div>
 
 <div class="paper" id="quality-considerations">
-  <p class="paper-title">Quality Considerations and Universal Healthcare</p>
-  <p class="paper-meta">Working paper, 2026.</p>
+  <p class="paper-title">Quality Consideration and Universal Healthcare</p>
+  <p class="paper-meta">Working paper, November 2026.</p>
   <p class="paper-abstract">
     A structural model of hospital choice under limited consideration,
-    using neural networks to measure risk-adjusted hospital quality.
-    Counterfactuals evaluate information provision and hospital-participation
-    incentives in a large public insurance scheme in India.
+    using a cross-fitted neural network to measure hospital quality through
+    risk-adjusted survival. Counterfactuals examine expansion of specialized
+    cardiac services and targeted information provision in a public
+    insurance scheme in South India.
   </p>
   <p class="paper-links"><a href="{{ '/assets/files/qualcons.pdf' | relative_url }}">Draft</a></p>
 </div>
